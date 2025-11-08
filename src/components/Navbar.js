@@ -1,7 +1,5 @@
 "use client"
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoCloseOutline } from "react-icons/io5";
-import { FaArrowTrendUp } from "react-icons/fa6";
+import { CircleDot, ChartNoAxesGantt, X  } from 'lucide-react';
 import { useEffect, useState } from "react"
 
 const Navbar = () => {
@@ -26,13 +24,13 @@ const Navbar = () => {
         className={`
           fixed top-0 left-0 w-full z-50 transition-all duration-300
           flex items-center justify-between px-15 py-3
-          ${scrolled ? "backdrop-blur-xl bg-white/70 border-gray-50 shadow-sm"
-          : "bg-white"}
+          ${scrolled ? "backdrop-blur-xl bg-white/70 border-gray-50 shadow-sm" : "bg-transparent"}
         `}
       >
         {/* Logo */}
         <a href="#" className="flex gap-2 items-center font-semibold text-gray-900">
-          <span className="tracking-wide text-lg">Task Vault</span>
+          <span className="tracking-wide text-lg flex gap-2">     <CircleDot />
+ Task Vault</span>
         </a>
 
         {/* Desktop Nav */}
@@ -57,9 +55,9 @@ const Navbar = () => {
           className="md:hidden p-2 rounded-lg bg-white hover:bg-gray-200 text-gray-800 transition"
         >
           {menuOpen ? (
-            <IoCloseOutline className="text-3xl" />
+            <X className="text-3xl" />
           ) : (
-            <RxHamburgerMenu className="text-2xl" />
+            <ChartNoAxesGantt className="text-2xl" />
           )}
         </button>
       </nav>
