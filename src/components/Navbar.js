@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { CircleDot, ChartNoAxesGantt, X  } from 'lucide-react';
 import { useEffect, useState } from "react"
 
@@ -23,14 +24,13 @@ const Navbar = () => {
           <nav
         className={`
           fixed top-0 left-0 w-full z-50 transition-all duration-300
-          flex items-center justify-between px-15 py-3
+          flex items-center justify-between px-5 md:px-10 py-3
           ${scrolled ? "backdrop-blur-xl bg-white/70 border-gray-50 shadow-sm" : "bg-transparent"}
         `}
       >
         {/* Logo */}
         <a href="#" className="flex gap-2 items-center font-semibold text-gray-900">
-          <span className="tracking-wide text-lg flex gap-2">     <CircleDot />
- Task Vault</span>
+          <span className="tracking-wide text-lg flex gap-2"><Image src="/logo.svg" alt="icon" width={30} height={30}/> Task Vault</span>
         </a>
 
         {/* Desktop Nav */}
@@ -71,28 +71,28 @@ const Navbar = () => {
         <a
           href="#"
           onClick={toggleMenu}
-          className="text-lg font-medium hover:text-blue-600 transition"
+          className="text-lg font-medium hover:text-gray-700 transition"
         >
           Home
         </a>
         <a
           href="#"
           onClick={toggleMenu}
-          className="text-lg font-medium hover:text-blue-600 transition"
+          className="text-lg font-medium hover:text-gray-700 transition"
         >
           Docs
         </a>
         <a
           href="#"
           onClick={toggleMenu}
-          className="text-lg font-medium hover:text-blue-600 transition"
+          className="text-lg font-medium hover:text-gray-700 transition"
         >
           Support
         </a>
         <a
           href="#"
           onClick={toggleMenu}
-          className="text-lg font-medium hover:text-blue-600 transition"
+          className="text-lg font-medium hover:text-gray-700 transition"
         >
           Contact
         </a>
@@ -101,13 +101,13 @@ const Navbar = () => {
         <div className="mt-8">
           <button
             onClick={toggleMenu}
-            className="px-5 py-2 mr-5 border border-gray-300 rounded-md text-gray-800 hover:bg-gray-100 transition"
+            className="px-5 py-2 mr-5 border border-gray-300 rounded-md text-gray-800 hover:bg-gray-200 transition"
           >
             Log in
           </button>
           <button
             onClick={toggleMenu}
-            className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            className="px-5 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-700 transition"
           >
             Sign up
           </button>
