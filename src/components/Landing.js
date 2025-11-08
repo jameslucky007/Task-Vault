@@ -4,7 +4,7 @@ const Landing = () => {
   return (
     <>
       <nav>
-        <li></li>
+        <li> </li>
         <li></li>
         <li></li>
         <li></li>
