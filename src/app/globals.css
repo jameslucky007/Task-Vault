@@ -37,8 +37,8 @@ p {
 
 
 
-/* Home Background */
-.bg-grain {
+/* Grain texture layer */
+.bg-grain::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -46,4 +46,5 @@ p {
   background-size: cover;
   background-position: center;
   opacity: 0.3;
+  pointer-events: none;
 }
