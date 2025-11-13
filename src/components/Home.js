@@ -4,29 +4,15 @@ import { Download, Book, Laptop, Code2, Hand } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-      {/* 🔹 Background Image Layer */}
-      <div
-        className="absolute inset-0 bg-[url('/bg.jpeg')] bg-cover bg-center opacity-40"
-      ></div>
-
-      {/* 🔸 Foreground Content */}
+      <div className="absolute inset-0 bg-[url('/bg.jpeg')] bg-cover bg-center opacity-40"></div>
       <div className="relative z-10 w-full max-w-5xl px-6">
-        {/* Top Badge */}
-        <div
-          className="flex flex-wrap items-center justify-center gap-2
-                     bg-yellow-100 text-yellow-800 
-                     px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium
-                     mb-6 shadow-sm w-fit mx-auto"
-        >
+        {/* Version Bar */}
+        <div className="flex flex-wrap items-center justify-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-6 shadow-sm w-fit mx-auto">
           <span className="w-2 h-2 bg-yellow-500 rounded-full" />
           v0.21.1: Find-in-page bug fixes →
         </div>
-
-        {/* Feature Row */}
-        <div
-          className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 
-                     mb-8 sm:mb-10 text-gray-600 text-xs sm:text-sm md:text-base font-medium"
-        >
+        {/* Feature information Text*/}
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8 sm:mb-10 text-gray-600 text-xs sm:text-sm md:text-base font-medium">
           <div className="flex items-center gap-2">
             <Code2 className="w-4 h-4 text-gray-500" />
             <span>Code optional</span>
