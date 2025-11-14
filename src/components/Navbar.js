@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ChartNoAxesGantt, X } from "lucide-react";
+import { ChartNoAxesGantt, X, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -61,9 +61,8 @@ const Navbar = () => {
             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
           </button>
 
-          <button className="px-3 py-1.5 text-l font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition">
-            Sign up
-          </button>
+          <button className=" flex gap-3 px-3 py-1.5 text-l font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition">
+            Sign up    <TrendingUp /></button>
         </div>
 
         {/* Mobile Menu Button */}

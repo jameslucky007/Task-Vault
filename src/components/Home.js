@@ -8,9 +8,10 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-5xl px-6">
         {/* Version Bar */}
         <div className="flex flex-wrap items-center justify-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-6 shadow-sm w-fit mx-auto">
-          <span className="w-2 h-2 bg-yellow-500 rounded-full" />
+          <span className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" />
           v0.21.1: Find-in-page bug fixes →
         </div>
+
         {/* Feature information Text*/}
         <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8 sm:mb-10 text-gray-600 text-xs sm:text-sm md:text-base font-medium">
           <div className="flex items-center gap-2">
