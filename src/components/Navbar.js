@@ -22,7 +22,7 @@ const Navbar = () => {
           fixed top-0 left-0 w-full z-50 transition-all duration-300
           flex items-center justify-between px-5 md:px-10 py-3
           ${scrolled
-            ? "backdrop-blur-xl bg-white/40 border-gray-50 shadow-sm"
+            ? "backdrop-blur-xl bg-white/30 border-gray-50 shadow-sm"
             : "bg-transparent"}
         `}
       >

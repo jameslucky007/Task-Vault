@@ -1,13 +1,53 @@
-import React from "react";
+import Image from "next/image";
+const icons = [
+  { src: "/notion.svg", alt: "Notion" },
+  { src: "/docs.svg", alt: "Google Docs" },
+  { src: "/calendar.png", alt: "Google Calendar" },
+  { src: "/gpt.png", alt: "Slack" },
+    { src: "/attract.png", alt: "Slack" },
+    { src: "/food.png", alt: "Slack" },
 
-const Slider = () => {
+    { src: "/5 euro.png", alt: "Slack" },
+
+    { src: "/accelerate.png", alt: "Slack" },
+
+    { src: "/age.png", alt: "Slack" },
+
+
+
+
+];
+
+export default function Slider() {
+
+  const loopIcons = [...icons, ...icons];
+
   return (
-    <>
-      <div>
-        <div className="h-15 w-full bg-gray-950"></div>
-      </div>
-    </>
-  );
-};
+    <div className="w-full bg-black py-8">
+      <div className="mx-auto flex w-full items-center gap-6 px-4">
+        {/* LEFT TEXT + ARROWS */}
+        <div className="flex shrink-0 items-center gap-2 text-white text-xl">
+          <span>Supported tools <br /> for ai agents</span>
+          <span className="h-15 border-r border-gray-600 mx-1" />
+        </div>
 
-export default Slider;
+        {/* ICON STRIP – LIMITED WIDTH, CONTINUOUS LOOP */}
+        <div className="relative flex-1 w-full overflow-hidden items-center">
+          <div className="marquee-track flex gap-20">
+            {loopIcons.map((icon, idx) => (
+              <div key={idx} className="shrink-0">
+                <Image
+                  src={icon.src}
+                  alt={icon.alt}
+                  width={40}
+                  height={40}
+                  className="rounded-lg"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
