@@ -39,7 +39,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-9 text-gray-800 font-medium">
-          {["Home", "Docs", "Support", "Contact"].map((item) => (
+          {["Home", "Docs", "Support", "Contact", "Log In"].map((item) => (
             <a
               key={item}
               href="#"
@@ -56,10 +56,7 @@ const Navbar = () => {
           ))}
 
           {/* Sign in / up Buttons */}
-          <button className="relative text-gray-800 font-medium px-1 py-1.5 group">
-            <span className="relative z-10">Log in</span>
-            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
-          </button>
+   
 
           <button className=" flex gap-3 px-3 py-1.5 text-l font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition">
             Sign up    <TrendingUp /></button>

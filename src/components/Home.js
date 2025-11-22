@@ -4,7 +4,7 @@ import { Download, Book, Laptop, Code2, Hand } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/bg.jpeg')] bg-cover bg-center opacity-40"></div>
+      <div className="absolute inset-0 bg-[url('/bg.jpeg')] bg-cover  opacity-35"></div>
       <div className="relative z-10 w-full max-w-5xl px-6">
         {/* Version Bar */}
         <a href="#" className=" cursor-pointer flex flex-wrap items-center justify-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-6 shadow-sm w-fit mx-auto hover:-translate-y-1 transition">
