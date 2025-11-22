@@ -39,7 +39,7 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-9 text-gray-800 font-medium">
-          {["Home", "Docs", "Support", "Contact", "Log In"].map((item) => (
+          {["Home", "Docs", "Support",  "Log In"].map((item) => (
             <a
               key={item}
               href="#"
