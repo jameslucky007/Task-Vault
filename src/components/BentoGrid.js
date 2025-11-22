@@ -1,90 +1,57 @@
 import React from "react";
-import Image from "next/image";
-
-const items = [
-  {
-    title: "Native Notifications",
-    description:
-      "We'll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.",
-  },
-  {
-    title: "Auto Updates",
-    description:
-      "We'll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.",
-  },
-  {
-    title: "Native Notifications",
-    description:
-      "We'll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.",
-  },
-  {
-    title: "Auto Updates",
-    description:
-      "We'll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.",
-  },
-  {
-    title: "Native Notifications",
-    description:
-      "We'll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.",
-  },
-  {
-    title: "Auto Updates",
-    description:
-      "We'll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.",
-  },
-];
 
 const BentoGrid = () => {
   return (
-    <div className="w-full py-20 ">
-      <h2 className="text-4xl font-bold mb-10 px-6">details</h2>
+    <div className="w-full min-h-screen bg-[#f5f6f8] p-6 flex justify-center">
+      <div className="grid grid-cols-3 grid-rows-2 gap-5 max-w-6xl w-full">
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-        {items.map((item, i) => (
-          <div
-            key={i}
-            className="
-              group relative rounded-3xl p-8  bg-white transition-all 
-              duration-500 shadow-sm hover:shadow-xl hover:scale-[1.02]
-            "
-          >
-            {/* Gradient overlay on hover */}
-            <div
-              className="
-                absolute inset-0 opacity-0 group-hover:opacity-100 
-                transition-all duration-500 rounded-3xl
-                bg-gradient-to-br from-[#fff1e9] via-[#f3e9ff] to-[#e8f4ff]
-              "
-            ></div>
-
-            {/* Actual content */}
-            <div className="relative z-10">
-              <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-
-              <div className="flex items-center gap-4 mb-6">
-                <Image
-                  src="/google-calendar.svg"
-                  width={50}
-                  height={50}
-                  alt="icon"
-                  className="rounded-xl shadow-sm"
-                />
-                <div className="bg-white shadow-sm border rounded-xl px-4 py-2 text-gray-600">
-                  New event! <br /> test@gmail.com
-                </div>
-              </div>
-
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {item.description}
-              </p>
-
-              <div className="bg-white border shadow-sm text-gray-600 rounded-xl px-4 py-2 inline-flex items-center gap-2">
-                <Image src="/refresh.svg" width={18} height={18} alt="icon" />
-                Updated to latest version
-              </div>
-            </div>
+        {/* Top-left big card */}
+        <div className="col-span-2 bg-white rounded-3xl shadow-sm p-6 flex flex-col justify-between border border-gray-100">
+          <div className="flex gap-4">
+            <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
+            <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
+            <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
+            <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
           </div>
-        ))}
+          <p className="text-lg font-medium mt-6">Note, Task, Whiteboard & more.</p>
+          <p className="text-gray-500 text-sm">
+            Manage your business end-to-end in our set of free native apps.
+          </p>
+        </div>
+
+        {/* Top-right tall card */}
+        <div className="row-span-2 bg-white rounded-3xl shadow-sm p-6 border border-gray-100">
+          <p className="text-lg font-medium">Built for speed.</p>
+          <p className="text-gray-500 text-sm mb-4">
+            Switch between apps in one stroke of a key.
+          </p>
+
+          <div className="mt-6 space-y-3">
+            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
+            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
+            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
+            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
+          </div>
+        </div>
+
+        {/* Bottom-left small card */}
+        <div className="bg-white rounded-3xl shadow-sm p-6 border border-gray-100">
+          <p className="text-lg font-medium">Switch between views</p>
+          <p className="text-gray-500 text-sm">
+            Table view, Kanban View, Tile View — covered.
+          </p>
+          <div className="mt-4 w-full h-24 bg-gray-100 rounded-2xl"></div>
+        </div>
+
+        {/* Bottom-middle small card */}
+        <div className="bg-white rounded-3xl shadow-sm p-6 border border-gray-100">
+          <p className="text-lg font-medium">Auto-enrichment.</p>
+          <p className="text-gray-500 text-sm">
+            Maintain clean data using our AI engine.
+          </p>
+
+          <div className="mt-4 w-full h-24 bg-gray-100 rounded-2xl"></div>
+        </div>
       </div>
     </div>
   );
