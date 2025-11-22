@@ -3,26 +3,23 @@ const icons = [
   { src: "/notion.svg", alt: "Notion" },
   { src: "/docs.svg", alt: "Google Docs" },
   { src: "/calendar.png", alt: "Google Calendar" },
-    { src: "/calendar.png", alt: "Google Calendar" },
+  { src: "/calendar.png", alt: "Google Calendar" },
   { src: "/gpt.png", alt: "Slack" },
-    { src: "/attract.png", alt: "Slack" },
-    { src: "/food.png", alt: "Slack" },
-    { src: "/food.png", alt: "Slack" },
-    { src: "/food.png", alt: "Slack" },
-    { src: "/food.png", alt: "Slack" },
-    { src: "/food.png", alt: "Slack" },
-    { src: "/food.png", alt: "Slack" },
-    { src: "/food.png", alt: "Slack" },
-    { src: "/accelerate.png", alt: "Slack" },
-    { src: "/age.png", alt: "Slack" },
-
-
-
-
+  { src: "/attract.png", alt: "Slack" },
+  { src: "/food.png", alt: "Slack" },
+  { src: "/notion.svg", alt: "Notion" },
+  { src: "/docs.svg", alt: "Google Docs" },
+  { src: "/calendar.png", alt: "Google Calendar" },
+  { src: "/food.png", alt: "Slack" },
+  { src: "/food.png", alt: "Slack" },
+  { src: "/accelerate.png", alt: "Slack" },
+  { src: "/age.png", alt: "Slack" },
+  { src: "/food.png", alt: "Slack" },
+  { src: "/accelerate.png", alt: "Slack" },
+  { src: "/age.png", alt: "Slack" },
 ];
 
 export default function Slider() {
-
   const loopIcons = [...icons, ...icons];
 
   return (

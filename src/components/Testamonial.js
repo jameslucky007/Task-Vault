@@ -7,37 +7,37 @@ const testimonials = [
     text: "Their ability to capture our brand essence in every project is unparalleled - an invaluable creative collaborator.",
     name: "Isabella Rodriguez",
     role: "CEO and Co-founder of ABC Company",
-    avatar: "/https://images.unsplash.com/photo-1762936263573-af3e0d866980?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar: "/prof.jpg",
   },
   {
     text: "Creative geniuses who listen, understand, and craft captivating visuals - an agency that truly understands our needs.",
     name: "Gabrielle Williams",
     role: "CEO and Co-founder of ABC Company",
-    avatar: "/avatar2.png",
+    avatar: "/prof.jpg",
   },
   {
     text: "Exceeded our expectations with innovative designs that brought our vision to life - a truly remarkable creative agency.",
     name: "Samantha Johnson",
     role: "CEO and Co-founder of ABC Company",
-    avatar: "/avatar3.png",
+    avatar: "/prof.jpg",
   },
   {
     text: "From concept to execution, their creativity knows no bounds - a game-changer for our brand’s success.",
     name: "Daniel Reed",
     role: "Creative Director",
-    avatar: "/avatar4.png",
+    avatar: "/prof.jpg",
   },
   {
     text: "A refreshing and imaginative agency that consistently delivers exceptional results - highly recommended for any project.",
     name: "Michael Tran",
     role: "Marketing Lead",
-    avatar: "/avatar5.png",
+    avatar: "/prof.jpg",
   },
   {
     text: "Their team’s artistic flair and strategic approach resulted in remarkable campaigns - a reliable creative partner.",
     name: "Emily Carter",
     role: "Brand Strategist",
-    avatar: "/avatar6.png",
+    avatar: "/prof.jpg",
   },
 ];
 
@@ -107,8 +107,8 @@ const Testimonial = () => {
               <div className="flex items-center gap-3">
                 <Image
                   src={t.avatar}
-                  width={40}
-                  height={40}
+                  width={50}
+                  height={50}
                   alt={t.name}
                   className="rounded-full"
                 />
