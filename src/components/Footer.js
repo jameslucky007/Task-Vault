@@ -50,10 +50,9 @@ const Footer = () => {
           {/* Navigation */}
           <nav className="flex justify-center gap-10 text-gray-300 text-sm font-medium mb-10">
             <a className="hover:text-white transition">Homepage</a>
-            <a className="hover:text-white transition">Products</a>
-            <a className="hover:text-white transition">Services</a>
             <a className="hover:text-white transition">About Us</a>
-            <a className="hover:text-white transition">Contact Us</a>
+            <a className="hover:text-white transition">Support</a>
+            <a className="hover:text-white transition">Privacy Policy</a>
           </nav>
 
           {/* Social Icons */}
