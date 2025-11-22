@@ -7,7 +7,7 @@ const testimonials = [
     text: "Their ability to capture our brand essence in every project is unparalleled - an invaluable creative collaborator.",
     name: "Isabella Rodriguez",
     role: "CEO and Co-founder of ABC Company",
-    avatar: "/avatar1.png",
+    avatar: "/https://images.unsplash.com/photo-1762936263573-af3e0d866980?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     text: "Creative geniuses who listen, understand, and craft captivating visuals - an agency that truly understands our needs.",
@@ -43,7 +43,7 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <section className="w-full bg-white py-20 overflow-hidden">
+    <section className="w-full bg-gray-200 py-20 overflow-hidden">
       <h2 className="text-4xl font-semibold text-center mb-16">
         Words of praise from others <br /> about our presence.
       </h2>
