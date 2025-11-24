@@ -7,17 +7,17 @@ const Footer = () => {
   return (
     <>
       <section className="w-full flex justify-center py-20 px-4">
-        <div className="relative w-full max-w-7xl rounded-[32px] overflow-hidden p-16 text-center bg-gray-600">
+        <div className="relative w-full max-w-7xl rounded-[32px] overflow-hidden p-16 text-center bg-gray-900">
           {/* Mesh Gradient Layers */}
           <div className="absolute inset-0">
             {/* Soft glow 1 */}
-            <div className="absolute w-[600px] h-[600px] rounded-full bg-gray-800 opacity-20 blur-[120px] animate-mesh-1"></div>
+            <div className="absolute w-[600px] h-[600px] rounded-full bg-black  blur-[120px] animate-mesh-1"></div>
 
             {/* Soft glow 2 */}
-            <div className="absolute w-[500px] h-[500px] rounded-full bg-gray-100 opacity-10 blur-[150px] animate-mesh-2"></div>
+            <div className="absolute w-[500px] h-[500px] rounded-full bg-gray-100  blur-[150px] animate-mesh-2"></div>
 
             {/* Soft glow 3 */}
-            <div className="absolute w-[700px] h-[700px] rounded-full bg-[#1e74ff] opacity-10 blur-[150px] animate-mesh-3"></div>
+            <div className="absolute w-[700px] h-[700px] rounded-full bg-black  blur-[150px] animate-mesh-3"></div>
           </div>
 
           {/* MAIN CONTENT */}
