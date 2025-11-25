@@ -35,6 +35,25 @@ p {
   font-family: var(--font-roboto), sans-serif;
 }
 
+/* REQUIRED FOR LENIS */
+html,
+body {
+  height: auto !important;
+  overflow: visible !important;
+  scroll-behavior: auto !important; /* disable native smooth scroll */
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+
+
+
 /* 1. Home Icon Animation */
 
 @keyframes marquee {
