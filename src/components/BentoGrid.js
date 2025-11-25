@@ -2,25 +2,51 @@ import React from "react";
 
 const BentoGrid = () => {
   return (
-    <div className="w-full min-h-screen bg-[#f5f6f8] p-6 flex justify-center">
-      <div className="grid grid-cols-3 grid-rows-2 gap-5 max-w-6xl w-full">
-
+    <div className="w-full min-h-screen bg-[#f5f6f8] p-4 flex justify-center">
+      <div
+        className="
+          grid 
+          gap-5 
+          max-w-6xl 
+          w-full
+          
+          grid-cols-1     /* mobile */
+          sm:grid-cols-2  /* tablets */
+          lg:grid-cols-3  /* desktop */
+        "
+      >
         {/* Top-left big card */}
-        <div className="col-span-2 bg-white rounded-3xl shadow-sm p-6 flex flex-col justify-between border border-gray-100">
-          <div className="flex gap-4">
+        <div
+          className="
+            bg-white rounded-3xl shadow-sm p-6 border border-gray-100
+            flex flex-col justify-between
+            sm:col-span-2      
+            lg:col-span-2      
+          "
+        >
+          <div className="flex gap-4 flex-wrap">
             <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
             <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
             <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
             <div className="w-12 h-12 rounded-xl bg-gray-100"></div>
           </div>
-          <p className="text-lg font-medium mt-6">Note, Task, Whiteboard & more.</p>
+
+          <p className="text-lg font-medium mt-6">
+            Note, Task, Whiteboard & more.
+          </p>
           <p className="text-gray-500 text-sm">
             Manage your business end-to-end in our set of free native apps.
           </p>
         </div>
 
         {/* Top-right tall card */}
-        <div className="row-span-2 bg-white rounded-3xl shadow-sm p-6 border border-gray-100">
+        <div
+          className="
+            bg-white rounded-3xl shadow-sm p-6 border border-gray-100
+            sm:row-span-2
+            lg:row-span-2
+          "
+        >
           <p className="text-lg font-medium">Built for speed.</p>
           <p className="text-gray-500 text-sm mb-4">
             Switch between apps in one stroke of a key.
