@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   useEffect(() => {
@@ -21,9 +20,11 @@ const Navbar = () => {
         className={`
           fixed top-0 left-0 w-full z-50 transition-all duration-300
           flex items-center justify-between px-5 md:px-10 py-3
-          ${scrolled
-            ? "backdrop-blur-xl bg-white/30 border-gray-50 shadow-sm"
-            : "bg-transparent"}
+          ${
+            scrolled
+              ? "backdrop-blur-xl bg-white/30 border-gray-50 shadow-sm"
+              : "bg-transparent"
+          }
         `}
       >
         {/* Logo */}
@@ -39,27 +40,21 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-9 text-gray-800 font-medium">
-          {["Home", "Docs", "Support",  "Log In"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="relative group"
-            >
+          {["Home", "Docs", "Support", "Log In"].map((item) => (
+            <a key={item} href="#" className="relative group">
               <span className="cursor-pointer transition-colors duration-200 group-hover:text-gray-900">
                 {item}
               </span>
               {/* Smooth underline animation */}
-              <span
-                className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-800 transition-all duration-300 group-hover:w-full"
-              ></span>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
 
           {/* Sign in / up Buttons */}
-   
 
           <button className=" flex gap-3 px-3 py-1.5 text-l font-medium text-white bg-gray-800 rounded-md hover:bg-gray-700 transition">
-            Sign up    <TrendingUp /></button>
+            Sign up <TrendingUp />
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -67,7 +62,11 @@ const Navbar = () => {
           onClick={toggleMenu}
           className="md:hidden p-2 rounded-lg bg-white hover:bg-gray-200 text-gray-800 transition"
         >
-          {menuOpen ? <X className="text-3xl" /> : <ChartNoAxesGantt className="text-2xl" />}
+          {menuOpen ? (
+            <X className="text-3xl" />
+          ) : (
+            <ChartNoAxesGantt className="text-2xl" />
+          )}
         </button>
       </nav>
 

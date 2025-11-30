@@ -19,7 +19,6 @@ export default function Features() {
     let lastScroll = window.scrollY;
     let isVisible = false;
 
-    // Detect visibility
     const observer = new IntersectionObserver(
       (entries) => {
         isVisible = entries[0].isIntersecting;
@@ -28,16 +27,15 @@ export default function Features() {
     );
 
     observer.observe(containerRef.current);
-
     const handleScroll = () => {
       if (!isVisible || !trackRef.current) return;
 
       const currentScroll = window.scrollY;
-      const direction = currentScroll > lastScroll ? 1 : -1; // 1 = down, -1 = up
+      const direction = currentScroll > lastScroll ? 1 : -1;
       lastScroll = currentScroll;
 
       const currentX = parseFloat(trackRef.current.dataset.x || "0");
-      const nextX = currentX + direction * 4; // speed
+      const nextX = currentX + direction * 1;
 
       trackRef.current.style.transform = `translateX(${nextX}px)`;
       trackRef.current.dataset.x = nextX;
@@ -54,7 +52,6 @@ export default function Features() {
   return (
     <div className="w-full py-5 bg-white">
       <div className="max-w-8xl mx-auto px-6">
-
         <div
           ref={containerRef}
           className="relative overflow-hidden rounded-2xl border bg-white py-6 px-4 shadow-sm"
@@ -72,7 +69,6 @@ export default function Features() {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

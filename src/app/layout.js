@@ -1,6 +1,6 @@
 import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
-import SmoothScrollProvider from "@/components/Wrappers/SmoothScrollProvider";
+import SmoothScrollProvider from "@/components/Wrappers/smoothScroll/SmoothScrollProvider";
 
 // Fonts Variables
 const poppins = Poppins({
