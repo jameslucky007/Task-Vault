@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 
 const Footer = () => {
@@ -58,7 +59,7 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex justify-center gap-6 mt-4 text-gray-300">
             <FaFacebook size={22} className="hover:text-white transition" />
-            <RxCross2 size={22} className="hover:text-white transition" />
+            <FaXTwitter size={22} className="hover:text-white transition"  />
             <FaInstagram size={22} className="hover:text-white transition" />
             <FaLinkedin size={22} className="hover:text-white transition" />
           </div>
