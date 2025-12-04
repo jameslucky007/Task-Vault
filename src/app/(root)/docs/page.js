@@ -4,6 +4,9 @@ const page = () => {
   return (
    <>
    <div>
+   <h2>
+    hello world from docs page
+   </h2>
     
    </div>
    </>
