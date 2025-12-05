@@ -1,6 +1,5 @@
 
 import BentoGrid from "@/components/LandingPage/BentoGrid";
-import Features from "@/components/LandingPage/Features";
 import Footer from "@/components/LandingPage/Footer";
 import Home from "@/components/LandingPage/Home";
 import Navbar from "@/components/LandingPage/Navbar";
@@ -17,7 +16,6 @@ const page = () => {
       <Home />
       <Slider />
       <Work />
-      <Features />
       <BentoGrid />
       <Testimonial/>
       <Footer />
