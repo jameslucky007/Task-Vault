@@ -1,8 +1,10 @@
 import { Poppins, Roboto } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/Wrappers/smoothScroll/SmoothScrollProvider";
+import Navbar from "@/components/LandingPage/Navbar";
+import Footer from "@/components/LandingPage/Footer";
+import PageWrapper from "@/components/Wrappers/pageWrapper/PageWrapper";
 
-// Fonts Variables
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
@@ -15,7 +17,6 @@ const roboto = Roboto({
   weight: ["400", "500", "700"],
 });
 
-// Meta data
 export const metadata = {
   title: "Task Vault",
   description: "Smart Todo Web APP",
@@ -25,8 +26,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable} antialiased`}>
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+      <body
+        suppressHydrationWarning
+        className={`${poppins.variable} ${roboto.variable} antialiased`}
+      >
+        <Navbar />
+
+        <SmoothScrollProvider>
+          <PageWrapper>{children}</PageWrapper>
+        </SmoothScrollProvider>
+
+        <Footer />
       </body>
     </html>
   );

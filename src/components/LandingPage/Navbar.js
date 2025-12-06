@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { ChartNoAxesGantt, X, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -22,21 +23,24 @@ const Navbar = () => {
           flex items-center justify-between px-5 md:px-10 py-3
           ${
             scrolled
-              ? "backdrop-blur-xl bg-white/30 border-gray-50 shadow-sm"
+              ? "backdrop-blur-xl bg-white/25 border-gray-50 shadow-sm"
               : "bg-transparent"
           }
         `}
       >
         {/* Logo */}
-        <a
-          href="#"
-          className="flex gap-2 items-center font-semibold text-gray-900"
-        >
-          <span className="tracking-wide text-lg flex gap-2">
-            <Image src="/logo.svg" alt="icon" width={30} height={30} />
-            Task Vault
-          </span>
-        </a>
+     <Link
+  href="/"
+  className="flex gap-2 items-center font-semibold text-gray-900"
+>
+  <Image src="/logo.svg" alt="Task Vault logo" width={30} height={30} />
+
+  <span className="tracking-wide text-lg flex gap-2">
+    Task Vault
+  </span>
+</Link>
+
+       
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-9 text-gray-800 font-medium">

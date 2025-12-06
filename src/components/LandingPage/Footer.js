@@ -54,6 +54,8 @@ const Footer = () => {
             <a className="hover:text-white transition">About Us</a>
             <a className="hover:text-white transition">Support</a>
             <a className="hover:text-white transition">Privacy Policy</a>
+                        <a className="hover:text-white transition">Release Notes</a>
+
           </nav>
 
           {/* Social Icons */}
