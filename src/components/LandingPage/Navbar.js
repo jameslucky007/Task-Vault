@@ -76,7 +76,8 @@ const Navbar = () => {
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {["Home", "Docs", "Support", "Contact"].map((item) => (
+     
+        {["Home", "Docs", "Support", "Contact",].map((item) => (
           <a
             key={item}
             href="#"

@@ -7,7 +7,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[url('/HeroBg.jpg')] bg-cover bg-top opacity-35"></div>
       <div className="relative z-10 w-full max-w-5xl px-6">
         {/* Version Bar */}
-        <a href="#" className=" cursor-pointer flex flex-wrap items-center justify-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-6 shadow-sm w-fit mx-auto hover:-translate-y-1 transition">
+        <a
+          href="#"
+          className=" cursor-pointer flex flex-wrap items-center justify-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-6 shadow-sm w-fit mx-auto hover:-translate-y-1 transition"
+        >
           <span className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" />
           v0.21.1: Find-in-page bug fixes →
         </a>
@@ -37,9 +40,14 @@ export default function HeroSection() {
         </p>
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
-          <button className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white     font-semibold px-6 py-3 rounded-lg shadow-md w-full sm:w-auto transition-all">
-            <Download className="w-4 h-4" /> Download now{" "}
-          </button>
+          <a
+            href="/commingsoon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md w-full sm:w-auto transition-all"
+          >
+            <Download className="w-4 h-4" /> Download now
+          </a>
 
           <button className="flex items-center justify-center gap-2 border border-gray-300 hover:border-gray-400    hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-lg w-full sm:w-auto transition-all">
             <Book className="w-4 h-4" /> Read Docs{" "}

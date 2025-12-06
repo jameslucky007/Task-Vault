@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   Sparkles,
   Brain,
@@ -37,7 +37,9 @@ export default function FeatureSlider() {
                 className="flex items-center gap-2 shrink-0 rounded-full bg-white/10 border border-white/20 px-5 py-2 backdrop-blur-md hover:bg-white/20 transition"
               >
                 <item.icon size={18} className="text-white" />
-                <span className="text-sm font-medium text-white">{item.label}</span>
+                <span className="text-sm font-medium text-white">
+                  {item.label}
+                </span>
               </div>
             ))}
           </div>
