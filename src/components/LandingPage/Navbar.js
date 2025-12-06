@@ -40,7 +40,6 @@ const Navbar = () => {
   </span>
 </Link>
 
-       
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-9 text-gray-800 font-medium">
@@ -78,10 +77,10 @@ const Navbar = () => {
       <div
         className={`fixed inset-0 bg-white text-gray-900 flex flex-col items-center justify-center gap-8 z-40 transition-transform duration-500 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        }`}                       
       >
      
-        {["Home", "Docs", "Support", "Contact",].map((item) => (
+        {["Home", "Docs", "Support", "Contact","Release notes"].map((item) => (
           <a
             key={item}
             href="#"
