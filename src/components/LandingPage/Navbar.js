@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ChartNoAxesGantt, X, TrendingUp, ChevronDown} from "lucide-react";
+import { ChartNoAxesGantt, X, TrendingUp, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
