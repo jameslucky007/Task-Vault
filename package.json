@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroui/react": "^2.8.5",
     "@studio-freight/lenis": "^1.0.42",
+    "aos": "^2.3.4",
     "framer-motion": "^12.23.24",
     "lucide": "^0.553.0",
     "lucide-react": "^0.556.0",
