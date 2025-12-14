@@ -21,7 +21,7 @@ const USEFUL_LINKS = [
   { label: "Donate ❤️", href: "/donate" },
   { label: "About Us", href: "/about" },
   { label: "Documentation", href: "/docs" },
-  { label: "GitHub", href: "https://github.com", external: true },
+  { label: "GitHub", href: "https://github.com/jameslucky007/Task-Vault", external: true },
 ];
 
 const Navbar = () => {
