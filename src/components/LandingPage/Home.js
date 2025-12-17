@@ -41,7 +41,7 @@ export default function HeroSection() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
           <a
-            href="/commingsoon"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md w-full sm:w-auto transition-all"
@@ -49,9 +49,9 @@ export default function HeroSection() {
             <Download className="w-4 h-4" /> Download now
           </a>
 
-          <button className="flex items-center justify-center gap-2 border border-gray-300 hover:border-gray-400    hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-lg w-full sm:w-auto transition-all">
+          <a href="/docs" className="flex items-center justify-center gap-2 border border-gray-300 hover:border-gray-400    hover:bg-gray-50 text-gray-700 font-semibold px-6 py-3 rounded-lg w-full sm:w-auto transition-all">
             <Book className="w-4 h-4" /> Read Docs{" "}
-          </button>
+          </a>
         </div>
       </div>
     </section>
