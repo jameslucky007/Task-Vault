@@ -40,25 +40,41 @@ const BentoGrid = () => {
         </div>
 
         {/* Top-right tall card */}
-        <div
-          className="
-            bg-white rounded-3xl shadow-sm p-6 border border-gray-100
-            sm:row-span-2
-            lg:row-span-2
-          "
-        >
-          <p className="text-lg font-medium">Built for speed.</p>
-          <p className="text-gray-500 text-sm mb-4">
-            Switch between apps in one stroke of a key.
-          </p>
+<div
+  className="
+    bg-white rounded-3xl shadow-sm p-6 border border-gray-100
+    sm:row-span-2
+    lg:row-span-2
+    flex flex-col
+  "
+>
+  <p className="text-lg font-medium">Built for speed.</p>
+  <p className="text-gray-500 text-sm mb-6">
+    Switch between apps in one stroke of a key.
+  </p>
 
-          <div className="mt-6 space-y-3">
-            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
-            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
-            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
-            <div className="w-full h-20 bg-gray-100 rounded-2xl"></div>
-          </div>
+  {/* iPhone Mockup */}
+  <div className="flex justify-center mt-auto">
+    <div className="relative w-[220px] h-[460px] rounded-[40px] bg-black shadow-xl">
+      
+      {/* Notch */}
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20" />
+
+      {/* Screen */}
+      <div className="absolute inset-[8px] rounded-[32px] bg-gray-100 overflow-hidden">
+        
+        {/* Fake App UI */}
+        <div className="p-4 space-y-3">
+          <div className="h-10 w-3/4 bg-gray-300 rounded-lg" />
+          <div className="h-24 bg-gray-200 rounded-xl" />
+          <div className="h-16 bg-gray-200 rounded-xl" />
+          <div className="h-16 bg-gray-200 rounded-xl" />
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
         {/* Bottom-left small card */}
         <div className="bg-white rounded-3xl shadow-sm p-6 border border-gray-100">
