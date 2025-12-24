@@ -80,7 +80,7 @@ const BentoGrid = () => {
         <div className="bg-white rounded-3xl shadow-sm p-6 border border-gray-100">
           <p className="text-lg font-medium">Switch between views</p>
           <p className="text-gray-500 text-sm">
-            Table view, Kanban View, Tile View — covered.
+            Table view, Kanban View,
           </p>
           <div className="mt-4 w-full h-24 bg-gray-100 rounded-2xl"></div>
         </div>
