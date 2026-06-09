@@ -1,5 +1,5 @@
 "use client";
-import { Download, Book, Laptop, Code2, Hand } from "lucide-react";
+import { Download, Laptop, Code2, Hand } from "lucide-react";
 import Navbar from "./Navbar";
 
 export default function HeroSection() {
@@ -7,11 +7,12 @@ export default function HeroSection() {
 
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
             <Navbar />
-      <div className="absolute inset-0 bg-[url('/HeroBg.jpg')] bg-cover bg-top opacity-35"></div>
+      <div aria-hidden="true" className="absolute inset-0 bg-[url('/HeroBg.jpg')] bg-cover bg-top opacity-30"></div>
       <div className="relative z-10 w-full max-w-5xl px-6">
         {/* Version Bar */}
         <a
-          href="#"
+          href="#release-notes"
+          aria-label="Release notes version 1.0.0 — Find-in-page bug fixes"
           className=" cursor-pointer flex flex-wrap items-center justify-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-6 shadow-sm w-fit mx-auto hover:-translate-y-1 transition"
         >
           <span className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" />
@@ -34,7 +35,7 @@ export default function HeroSection() {
           </div>
         </div>
         {/* Heading and Subtext */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-snug m:leading-tight max-w-3xl mx-auto px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-snug md:leading-tight max-w-3xl mx-auto px-2">
           Web app to desktop app in minutes{" "}
         </h1>
         <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 px-3">
@@ -44,12 +45,11 @@ export default function HeroSection() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
           <a
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/download/android"
+            aria-label="Download for Android"
             className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md w-full sm:w-auto transition-all"
           >
-            <Download className="w-4 h-4" /> Download now Android
+            <Download className="w-4 h-4" /> Download for Android
           </a>
 
 
