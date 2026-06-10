@@ -77,15 +77,19 @@ export default function HomePage() {
                 {/* GRID */}
                 <div className="pt-2">
                   {/* GRID HEADER */}
-                  <div className="flex items-center gap-2 mb-3 pl-[52px]">
-                    {days.map((day, index) => (
-                      <span
-                        key={index}
-                        className="text-[11px] font-medium w-5 text-center text-black/70"
-                      >
-                        {day}
-                      </span>
-                    ))}
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-10" />
+
+                    <div className="flex items-center gap-2">
+                      {days.map((day, index) => (
+                        <span
+                          key={index}
+                          className="text-[11px] font-medium w-5 text-center text-black/70"
+                        >
+                          {day}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="space-y-3">
