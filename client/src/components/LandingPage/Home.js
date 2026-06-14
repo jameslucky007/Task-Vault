@@ -9,15 +9,13 @@ export default function HeroSection() {
             <Navbar />
       <div aria-hidden="true" className="absolute inset-0 bg-[url('/HeroBg.jpg')] bg-cover bg-top opacity-30"></div>
       <div className="relative z-10 w-full max-w-5xl px-6">
-        {/* Version Bar */}
-        <a
-          href="#release-notes"
-          aria-label="Release notes version 1.0.0 — Find-in-page bug fixes"
-          className=" cursor-pointer flex flex-wrap items-center justify-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium mb-6 shadow-sm w-fit mx-auto hover:-translate-y-1 transition"
-        >
-          <span className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" />
-          v1.0.0: Find-in-page bug fixes →
-        </a>
+        {/* Version Badge */}
+        <div className="mb-6 flex justify-center">
+          <div className="inline-flex items-center gap-3 bg-black/50 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium shadow-sm">
+            <span className="inline-flex items-center justify-center bg-white text-black rounded-full px-2 py-1 text-[10px] font-semibold">NEW</span>
+            <span className="text-sm text-white/90">Just shipped v2.0</span>
+          </div>
+        </div>
 
         {/* Feature information Text*/}
         <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8 sm:mb-10 text-gray-600 text-xs sm:text-sm md:text-base font-medium">
@@ -35,24 +33,29 @@ export default function HeroSection() {
           </div>
         </div>
         {/* Heading and Subtext */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-snug md:leading-tight max-w-3xl mx-auto px-2">
-          Web app to desktop app in minutes{" "}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-snug md:leading-tight max-w-3xl mx-auto px-2">
+          A spectrum of colors
+          that spark creativity
         </h1>
-        <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 px-3">
-          Take your web app codebase and transform it into a cross-platform
-          desktop app with native functionality.{" "}
+        <p className="text-white/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 px-3">
+          Beautifully designed components and a delightful experience for
+          creatives and builders.
         </p>
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
           <a
-            href="/download/android"
-            aria-label="Download for Android"
-            className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md w-full sm:w-auto transition-all"
+            href="#get-started"
+            className="inline-flex items-center justify-center gap-2 bg-white text-black font-semibold px-6 py-3 rounded-full shadow-md w-full sm:w-auto transition-all"
           >
-            <Download className="w-4 h-4" /> Download for Android
+            Get started
           </a>
 
-
+          <a
+            href="#learn-more"
+            className="inline-flex items-center justify-center gap-2 bg-white/10 text-white/90 font-medium px-6 py-3 rounded-full w-full sm:w-auto transition-all"
+          >
+            Learn more
+          </a>
         </div>
       </div>
     </section>
