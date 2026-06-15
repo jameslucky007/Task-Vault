@@ -17,21 +17,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Feature information Text*/}
-        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8 sm:mb-10 text-gray-600 text-xs sm:text-sm md:text-base font-medium">
-          <div className="flex items-center gap-2">
-            <Code2 className="w-4 h-4 text-gray-500" />
-            <span>Code optional</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Hand className="w-4 h-4 text-gray-500" />
-            <span>Drag & drop builder</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Laptop className="w-4 h-4 text-gray-500" />
-            <span>Windows, Mac, Linux</span>
-          </div>
-        </div>
+   
         {/* Heading and Subtext */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-snug md:leading-tight max-w-3xl mx-auto px-2">
           A spectrum of colors
