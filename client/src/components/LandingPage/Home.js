@@ -1,13 +1,41 @@
 "use client";
-import { Download, Laptop, Code2, Hand } from "lucide-react";
 import Navbar from "./Navbar";
+import PixelBlast from "../PixelBlast/PixelBlast";
 
 export default function HeroSection() {
   return (
 
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
             <Navbar />
-      <div aria-hidden="true" className="absolute inset-0 bg-[url('/HeroBg.jpg')] bg-cover bg-top opacity-30"></div>
+
+      <div
+        className="absolute inset-0 -z-20 pointer-events-none bg-gradient-to-b from-black via-gray-900 to-black"
+        aria-hidden="true"
+      />
+
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <PixelBlast
+          variant="square"
+          pixelSize={2}
+          color="#ffffff"
+          patternScale={4}
+          patternDensity={0.85}
+          pixelSizeJitter={0}
+          enableRipples
+          rippleSpeed={0.4}
+          rippleThickness={0.12}
+          rippleIntensityScale={1.5}
+          liquid={false}
+          liquidStrength={0.12}
+          liquidRadius={1.2}
+          liquidWobbleSpeed={5}
+          speed={0.4}
+          edgeFade={0.25}
+          transparent
+        />
+      </div>
+
+      {/* <div aria-hidden="true" className="absolute inset-0 bg-[url('/HeroBg.jpg')] bg-cover bg-top opacity-30"></div> */}
       <div className="relative z-10 w-full max-w-5xl px-6">
         {/* Version Badge */}
         <div className="mb-6 flex justify-center">
@@ -17,7 +45,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-   
         {/* Heading and Subtext */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-snug md:leading-tight max-w-3xl mx-auto px-2">
           A spectrum of colors

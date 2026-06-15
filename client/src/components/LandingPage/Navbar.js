@@ -45,8 +45,8 @@ const Navbar = () => {
       <div
         className={`pointer-events-auto w-full max-w-6xl rounded-3xl flex items-center justify-between gap-6 px-6 py-3 transition-all duration-300 ${
           scrolled
-            ? "backdrop-blur-2xl bg-black/50 shadow-2xl border border-white/10"
-            : "backdrop-blur-xl bg-black/30 border border-white/6"
+            ? "backdrop-blur-2xl bg-white/20 shadow-2xl border border-white/10"
+            : "backdrop-blur-xl bg-white/20 border border-white/6"
         }`}
       >
         {/* Logo */}
