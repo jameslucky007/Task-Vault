@@ -38,9 +38,9 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ t }) => (
-  <div className="bg-white w-[280px] md:w-[360px] shrink-0 rounded-2xl p-6 shadow-sm border border-gray-200">
-    <FaQuoteLeft className="text-blue-500 mb-4 text-xl md:text-2xl" />
-    <p className="text-gray-700 mb-6 leading-relaxed text-sm md:text-base">
+  <div className="bg-white w-[280px] md:w-[360px] shrink-0 rounded-2xl p-6 border border-zinc-200 hover:border-zinc-300 transition-colors duration-300 shadow-sm">
+    <FaQuoteLeft className="text-zinc-300 mb-4 text-xl md:text-2xl" />
+    <p className="text-zinc-650 mb-6 leading-relaxed text-sm md:text-base">
       {t.text}
     </p>
 
@@ -50,13 +50,13 @@ const TestimonialCard = ({ t }) => (
         width={44}
         height={44}
         alt={t.name}
-        className="rounded-full object-cover shadow-sm"
+        className="rounded-full object-cover shadow-sm border border-zinc-200"
       />
       <div>
-        <p className="font-semibold text-gray-900 text-sm md:text-base leading-tight">
+        <p className="font-semibold text-zinc-900 text-sm md:text-base leading-tight">
           {t.name}
         </p>
-        <p className="text-xs md:text-sm text-gray-500">{t.role}</p>
+        <p className="text-xs md:text-sm text-zinc-500">{t.role}</p>
       </div>
     </div>
   </div>
@@ -65,8 +65,8 @@ const TestimonialCard = ({ t }) => (
 const Testimonial = () => {
   const rowStyles = "flex gap-6 group-hover:[animation-play-state:paused]";
   return (
-    <section className="w-full bg-gray-200 py-12 md:py-20 overflow-hidden">
-      <h2 className="text-2xl md:text-4xl font-semibold text-center mb-10 md:mb-16 px-4 text-gray-900">
+    <section className="w-full bg-[#fafafa] py-12 md:py-20 overflow-hidden border-b border-zinc-100">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 md:mb-16 px-4 text-zinc-900 tracking-tight">
         Words of praise from others <br className="hidden md:block" /> about our
         presence.
       </h2>

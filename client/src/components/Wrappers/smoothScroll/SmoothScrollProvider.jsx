@@ -7,9 +7,9 @@ export default function SmoothScrollProvider({ children }) {
     const lenis = new Lenis({
       smooth: true,
       lerp: 0.12,
-      duration: 1.0,
-      wheelMultiplier: 0.6,
-      touchMultiplier: 0.9,
+      duration: 2.0,
+      wheelMultiplier: 0.7,
+      touchMultiplier: 0.8,
 
       orientation: "vertical",
     });
