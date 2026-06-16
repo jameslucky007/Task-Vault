@@ -15,6 +15,7 @@ import {
   User,
   Plus,
 } from "lucide-react";
+import Image from 'next/image';
 
 const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN"];
 const days = ["M", "T", "W", "T", "F", "S", "S"];
@@ -159,19 +160,10 @@ export default function HomePage() {
 
               {/* STORE */}
               <div className="bg-white border border-zinc-200 rounded-[28px] p-6 text-zinc-900 flex flex-col gap-4 justify-center shadow-lg">
+                <h2 className="text-lg font-medium text-zinc-900">Download this app</h2>
                 <StoreButton
                   icon={
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden
-                    >
-                      <path d="M16.5 7.5c.9-1.1 1.4-2.6 1.2-4-.9.1-2 0-2.8.6-.6.4-1 1-1.6 1.6-.6.6-1.4 1.4-2.4 1.4-.9 0-1.6-.5-2.3-1.1C6.9 5.2 5.9 4.3 4.6 4c-.3 1-.1 2.3.6 3.4.5.7 1.2 1.4 2 2 .7.5 1.6 1 2.6 1 .2 0 .4 0 .6-.1 1.1-.3 1.9-.9 2.7-1.6.6-.6 1.1-1.2 1.5-1.8z" fill="black" />
-                      <path d="M13.5 13.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" fill="black" />
-                    </svg>
+                    <Image src="/apple-logo.svg" alt="Apple Icon" width={24} height={24} />
                   }
                   title="Download on the"
                   subtitle="App Store"
@@ -181,17 +173,7 @@ export default function HomePage() {
 
                 <StoreButton
                   icon={
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden
-                    >
-                      <path d="M4 4l12 8-12 8V4z" fill="black" />
-                      <path d="M16 12L8 4v16l8-8z" fill="black" opacity="0.2" />
-                    </svg>
+                    <Image src="/play-store-logo.svg" alt="Google Play Icon" width={24} height={24} />
                   }
                   title="GET IT ON"
                   subtitle="Google Play"
