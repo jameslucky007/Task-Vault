@@ -39,13 +39,12 @@ const Navbar = () => {
 
   return (
     <nav
-      data-aos="fade-down"
       className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 pointer-events-none"
     >
       <div
         className={`pointer-events-auto w-full max-w-6xl rounded-3xl flex items-center justify-between gap-6 px-6 py-3 transition-all duration-300 ${
           scrolled
-            ? "backdrop-blur-md bg-white/85 shadow-sm border border-zinc-200/60"
+            ? "backdrop-blur-md bg-white/65 shadow-sm border border-zinc-200/60"
             : "backdrop-blur-xl bg-black/30 border border-white/10"
         }`}
       >
@@ -63,7 +62,7 @@ const Navbar = () => {
             <Link
               key={item.label}
               href={item.href}
-              className={`px-3 py-1 rounded-md transition ${scrolled ? "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900" : "text-white/80 hover:bg-white/5 hover:text-white"}`}
+              className={`px-3 py-1 rounded-md transition ${scrolled ? "text-gray-800 hover:bg-zinc-100 hover:text-zinc-900" : "text-white/80 hover:bg-white/5 hover:text-white"}`}
             >
               {item.label}
             </Link>
