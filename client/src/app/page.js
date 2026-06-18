@@ -4,6 +4,7 @@ import Testimonial from "@/components/LandingPage/Testimonial";
 import Work from "@/components/LandingPage/Work";
 import React from "react";
 import About from "@/components/LandingPage/About";
+import Faq from "@/components/LandingPage/Faq";
 
 
 const page = () => {
@@ -13,6 +14,7 @@ const page = () => {
       <Work />
       <BentoGrid />
       <Testimonial/>
+      <Faq />
       <About/>
     </>
   );
