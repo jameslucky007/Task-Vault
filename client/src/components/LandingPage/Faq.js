@@ -33,8 +33,20 @@ const PlusIcon = ({ className = "w-4 h-4 text-gray-600" }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden
   >
-    <path d="M12 5v14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M12 5v14"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5 12h14"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
@@ -46,8 +58,20 @@ const CloseIcon = ({ className = "w-4 h-4 text-gray-600" }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden
   >
-    <path d="M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M18 6L6 18"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6 6l12 12"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
@@ -61,7 +85,9 @@ const Faq = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-3xl mx-auto px-6">
-        <p className="text-center text-sm text-gray-400 tracking-widest mb-3">TRUSTED BY</p>
+        <p className="text-center text-sm text-gray-400 tracking-widest mb-3">
+          TRUSTED BY
+        </p>
         <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-8">
           Frequently Asked Questions
         </h2>
@@ -72,15 +98,17 @@ const Faq = () => {
             return (
               <div
                 key={index}
-                className={`transition-all duration-200 ${open ? 'bg-white shadow-xl rounded-2xl border' : 'bg-slate-100 rounded-full'}`}
+                className={`transition-all duration-200 ${open ? "bg-white shadow-xl rounded-2xl border" : "bg-slate-100 rounded-full"}`}
               >
                 <button
-                  className={`w-full flex items-center justify-between ${open ? 'px-6 py-5 rounded-2xl' : 'px-6 py-4 rounded-full'}`}
+                  className={`w-full flex items-center justify-between ${open ? "px-6 py-5 rounded-2xl" : "px-6 py-4 rounded-full"}`}
                   onClick={() => toggle(index)}
                   aria-expanded={open}
                   aria-controls={`faq-${index}`}
                 >
-                  <span className={`text-left flex-1 ${open ? 'text-gray-900 font-medium' : 'text-gray-700 font-medium'}`}>
+                  <span
+                    className={`text-left flex-1 ${open ? "text-gray-900 font-medium" : "text-gray-700 font-medium"}`}
+                  >
                     {item.question}
                   </span>
 
@@ -93,7 +121,7 @@ const Faq = () => {
 
                 <div
                   id={`faq-${index}`}
-                  className={`px-6 overflow-hidden transition-all duration-300 ${open ? 'max-h-96 py-4 border-t' : 'max-h-0'}`}
+                  className={`px-6 overflow-hidden transition-all duration-300 ${open ? "max-h-96 py-4 border-t" : "max-h-0"}`}
                 >
                   <p className="text-gray-600">{item.answer}</p>
                 </div>

@@ -4,11 +4,7 @@ import { usePathname } from "next/navigation";
 export default function PageWrapper({ children }) {
   const pathname = usePathname();
 
-  const paddedRoutes = [
-    "/commingsoon",
-    "/about",
-  
-  ];
+  const paddedRoutes = ["/commingsoon", "/about"];
 
   const needsPadding = paddedRoutes.some((route) => pathname.startsWith(route));
 

@@ -38,9 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 pointer-events-none"
-    >
+    <nav className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 pointer-events-none">
       <div
         className={`pointer-events-auto w-full max-w-6xl rounded-3xl flex items-center justify-between gap-6 px-6 py-3 transition-all duration-300 ${
           scrolled
@@ -50,10 +48,21 @@ const Navbar = () => {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${scrolled ? "bg-zinc-100" : "bg-white/10"}`}>
-            <Image src={scrolled ? "/logo.svg" : "/logo-2.svg"} alt="Task Vault logo" width={22} height={22} />
+          <div
+            className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${scrolled ? "bg-zinc-100" : "bg-white/10"}`}
+          >
+            <Image
+              src={scrolled ? "/logo.svg" : "/logo-2.svg"}
+              alt="Task Vault logo"
+              width={22}
+              height={22}
+            />
           </div>
-          <span className={`text-sm font-semibold transition-colors ${scrolled ? "text-zinc-900" : "text-white"}`}>Task Vault</span>
+          <span
+            className={`text-sm font-semibold transition-colors ${scrolled ? "text-zinc-900" : "text-white"}`}
+          >
+            Task Vault
+          </span>
         </Link>
 
         {/* Menu */}
@@ -71,11 +80,17 @@ const Navbar = () => {
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-3">
-          <Link href="/auth/signin" className={`hidden sm:inline-flex px-4 py-1.5 rounded-full transition text-sm font-medium ${scrolled ? "text-zinc-600 hover:bg-zinc-100" : "text-white/80 hover:bg-white/5"}`}>
+          <Link
+            href="/auth/signin"
+            className={`hidden sm:inline-flex px-4 py-1.5 rounded-full transition text-sm font-medium ${scrolled ? "text-zinc-600 hover:bg-zinc-100" : "text-white/80 hover:bg-white/5"}`}
+          >
             Log in
           </Link>
 
-          <Link href="/auth/signup" className={`inline-flex items-center gap-2 px-5 py-2 rounded-full shadow-md text-sm font-semibold transition-all ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-gray-200"}`}>
+          <Link
+            href="/auth/signup"
+            className={`inline-flex items-center gap-2 px-5 py-2 rounded-full shadow-md text-sm font-semibold transition-all ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-gray-200"}`}
+          >
             Sign up <TrendingUp size={14} />
           </Link>
         </div>

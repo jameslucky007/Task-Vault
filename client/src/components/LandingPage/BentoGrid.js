@@ -15,7 +15,7 @@ import {
   User,
   Plus,
 } from "lucide-react";
-import Image from 'next/image';
+import Image from "next/image";
 
 const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN"];
 const days = ["M", "T", "W", "T", "F", "S", "S"];
@@ -31,19 +31,10 @@ const grid = [
 
 export default function HomePage() {
   return (
-    <main id="features" className="w-full bg-[#09090b] text-white py-16 md:py-24 overflow-hidden relative border-b border-zinc-900">
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage:
-              "radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
-        />
-      </div>
-
+    <main
+      id="features"
+      className="w-full bg-[#09090b] text-white py-16 md:py-24 overflow-hidden relative border-b border-zinc-900"
+    >
       <div className="relative z-10 max-w-[1280px] mx-auto px-4">
         <div className="grid grid-cols-1 xl:grid-cols-[1fr_340px] gap-6 items-start">
           {/* LEFT SIDE */}
@@ -77,10 +68,8 @@ export default function HomePage() {
 
                 {/* GRID */}
                 <div className="pt-2">
-                  {/* GRID HEADER */}
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-10" />
-
                     <div className="flex items-center gap-2">
                       {days.map((day, index) => (
                         <span
@@ -95,10 +84,7 @@ export default function HomePage() {
 
                   <div className="space-y-3">
                     {months.map((month, row) => (
-                      <div
-                        key={month}
-                        className="flex items-center gap-3"
-                      >
+                      <div key={month} className="flex items-center gap-3">
                         <span className="w-10 text-[11px] font-medium text-zinc-400">
                           {month}
                         </span>
@@ -121,49 +107,43 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* BOTTOM */}
+            {/* FEATURES */}
             <div className="grid lg:grid-cols-[1.2fr_1fr] gap-6">
-              {/* FEATURES */}
               <div className="border border-zinc-200 rounded-[28px] p-5 bg-white text-zinc-900 shadow-lg">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <FeatureCard
-                    icon={<Activity size={28} />}
-                    title="Habits"
-                  />
+                  <FeatureCard icon={<Activity size={28} />} title="Habits" />
 
-                  <FeatureCard
-                    icon={<Clock3 size={28} />}
-                    title="Time"
-                  />
+                  <FeatureCard icon={<Clock3 size={28} />} title="Time" />
 
                   <FeatureCard
                     icon={<BarChart3 size={28} />}
                     title="Progress"
                   />
 
-                  <FeatureCard
-                    icon={<Calendar size={28} />}
-                    title="Schedule"
-                  />
+                  <FeatureCard icon={<Calendar size={28} />} title="Schedule" />
 
                   <FeatureCard
                     icon={<PieChart size={28} />}
                     title="Analytics"
                   />
 
-                  <FeatureCard
-                    icon={<Settings size={28} />}
-                    title="Settings"
-                  />
+                  <FeatureCard icon={<Settings size={28} />} title="Settings" />
                 </div>
               </div>
 
               {/* STORE */}
               <div className="bg-white border border-zinc-200 rounded-[28px] p-6 text-zinc-900 flex flex-col gap-4 justify-center shadow-lg">
-                <h2 className="text-lg font-medium text-zinc-900">Download this app</h2>
+                <h2 className="text-lg font-medium text-zinc-900">
+                  Download this app
+                </h2>
                 <StoreButton
                   icon={
-                    <Image src="/apple-logo.svg" alt="Apple Icon" width={24} height={24} />
+                    <Image
+                      src="/apple-logo.svg"
+                      alt="Apple Icon"
+                      width={24}
+                      height={24}
+                    />
                   }
                   title="Download on the"
                   subtitle="App Store"
@@ -173,7 +153,12 @@ export default function HomePage() {
 
                 <StoreButton
                   icon={
-                    <Image src="/play-store-logo.svg" alt="Google Play Icon" width={24} height={24} />
+                    <Image
+                      src="/play-store-logo.svg"
+                      alt="Google Play Icon"
+                      width={24}
+                      height={24}
+                    />
                   }
                   title="GET IT ON"
                   subtitle="Google Play"
@@ -293,15 +278,11 @@ export default function HomePage() {
                 {/* NAVBAR */}
                 <div className="mt-4 bg-white border border-zinc-200 rounded-[22px] px-5 py-3 flex items-center justify-between shadow-md">
                   <Home className="text-zinc-900 w-5 h-5" />
-
                   <BarChart3 className="text-zinc-400 w-5 h-5" />
-
                   <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center -mt-7 shadow-md shadow-black/20">
                     <Plus className="text-white w-5 h-5" />
                   </div>
-
                   <Calendar className="text-zinc-400 w-5 h-5" />
-
                   <User className="text-zinc-400 w-5 h-5" />
                 </div>
               </div>
@@ -317,10 +298,7 @@ function FeatureCard({ icon, title }) {
   return (
     <div className="border border-zinc-200 bg-zinc-50 text-zinc-950 rounded-[20px] aspect-square flex flex-col items-center justify-center gap-3 hover:bg-zinc-100 hover:border-zinc-300 transition-all duration-300 cursor-pointer shadow-sm">
       <div className="text-zinc-800">{icon}</div>
-
-      <p className="text-sm md:text-base font-semibold">
-        {title}
-      </p>
+      <p className="text-sm md:text-base font-semibold">{title}</p>
     </div>
   );
 }
@@ -332,18 +310,13 @@ function StoreButton({ icon, title, subtitle }) {
         <div className="w-12 h-12 rounded-xl bg-zinc-100 text-zinc-900 flex items-center justify-center text-2xl">
           {icon}
         </div>
-
         <div>
-          <p className="text-[11px] text-zinc-500 font-medium">
-            {title}
-          </p>
-
+          <p className="text-[11px] text-zinc-500 font-medium">{title}</p>
           <p className="text-lg md:text-xl font-bold leading-none mt-1 text-zinc-950">
             {subtitle}
           </p>
         </div>
       </div>
-
       <span className="text-xl text-zinc-400">→</span>
     </div>
   );
@@ -354,12 +327,8 @@ function HabitItem({ icon, title }) {
     <div className="bg-white rounded-[18px] border border-zinc-200 px-4 py-3.5 flex items-center justify-between shadow-sm">
       <div className="flex items-center gap-3">
         <div className="text-zinc-700">{icon}</div>
-
-        <span className="text-zinc-800 text-sm font-bold">
-          {title}
-        </span>
+        <span className="text-zinc-800 text-sm font-bold">{title}</span>
       </div>
-
       <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center shadow-sm">
         <Check className="text-white w-4 h-4" />
       </div>

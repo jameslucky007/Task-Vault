@@ -1,11 +1,13 @@
 "use client";
 import Navbar from "./Navbar";
-import PixelSnow from '../Background/PixelSnow';
+import PixelSnow from "../Background/PixelSnow";
 
 export default function HeroSection() {
   return (
-
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-black">
+    <section
+      id="home"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-black"
+    >
       <Navbar />
 
       <div
@@ -13,7 +15,7 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      <PixelSnow 
+      <PixelSnow
         color="#ffffff"
         flakeSize={0.01}
         minFlakeSize={1.25}
@@ -36,7 +38,9 @@ export default function HeroSection() {
         {/* Version Badge */}
         <div className="mb-6 flex justify-center">
           <div className="inline-flex items-center gap-3 bg-black/60 border border-white/10 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium shadow-sm">
-            <span className="inline-flex items-center justify-center bg-indigo-500 text-white rounded-full px-2 py-1 text-[10px] font-semibold">NEW</span>
+            <span className="inline-flex items-center justify-center bg-indigo-500 text-white rounded-full px-2 py-1 text-[10px] font-semibold">
+              NEW
+            </span>
             <span className="text-sm text-white/90">Just shipped v2.0</span>
           </div>
         </div>
@@ -48,8 +52,8 @@ export default function HeroSection() {
           Master your consistency.
         </h1>
         <p className="text-zinc-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 px-3 leading-relaxed">
-          Smart tasks and habit tracking designed for builders. 
-          Visualize your progress, lock in consistency, and build routines that stick.
+          Smart tasks and habit tracking designed for builders. Visualize your
+          progress, lock in consistency, and build routines that stick.
         </p>
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
