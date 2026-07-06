@@ -1,9 +1,11 @@
-import { Poppins, Roboto } from "next/font/google";
+import { Poppins, Roboto, Geist } from "next/font/google";
 import "./globals.css";
-import SmoothScrollProvider from "@/components/Wrappers/smoothScroll/SmoothScrollProvider";
-import Navbar from "@/components/LandingPage/Navbar";
-import Footer from "@/components/LandingPage/Footer";
-import PageWrapper from "@/components/Wrappers/pageWrapper/PageWrapper";
+import SmoothScrollProvider from "../components/wrappers/SmoothScrollProvider";
+import PageWrapper from "../components/wrappers/PageWrapper";
+import Footer from "../components/landing/Footer";
+import { cn } from "../utils/cn";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,9 +25,9 @@ export const metadata = {
   icons: { icon: "/logo-2.svg" },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body
         suppressHydrationWarning
         className={`${poppins.variable} ${roboto.variable} antialiased`}

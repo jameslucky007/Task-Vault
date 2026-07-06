@@ -16,6 +16,7 @@ import {
   Plus,
 } from "lucide-react";
 import Image from "next/image";
+import { ReactNode } from "react";
 
 const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN"];
 const days = ["M", "T", "W", "T", "F", "S", "S"];
@@ -294,7 +295,12 @@ export default function HomePage() {
   );
 }
 
-function FeatureCard({ icon, title }) {
+interface FeatureCardProps {
+  icon: ReactNode;
+  title: string;
+}
+
+function FeatureCard({ icon, title }: FeatureCardProps) {
   return (
     <div className="border border-zinc-200 bg-zinc-50 text-zinc-950 rounded-[20px] aspect-square flex flex-col items-center justify-center gap-3 hover:bg-zinc-100 hover:border-zinc-300 transition-all duration-300 cursor-pointer shadow-sm">
       <div className="text-zinc-800">{icon}</div>
@@ -303,7 +309,13 @@ function FeatureCard({ icon, title }) {
   );
 }
 
-function StoreButton({ icon, title, subtitle }) {
+interface StoreButtonProps {
+  icon: ReactNode;
+  title: string;
+  subtitle: string;
+}
+
+function StoreButton({ icon, title, subtitle }: StoreButtonProps) {
   return (
     <div className="flex items-center justify-between p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 hover:bg-zinc-100 hover:border-zinc-300 transition-all duration-300 cursor-pointer shadow-sm">
       <div className="flex items-center gap-4">
@@ -322,7 +334,7 @@ function StoreButton({ icon, title, subtitle }) {
   );
 }
 
-function HabitItem({ icon, title }) {
+function HabitItem({ icon, title }: { icon: ReactNode; title: string }) {
   return (
     <div className="bg-white rounded-[18px] border border-zinc-200 px-4 py-3.5 flex items-center justify-between shadow-sm">
       <div className="flex items-center gap-3">
