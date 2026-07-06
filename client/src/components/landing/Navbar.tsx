@@ -2,112 +2,144 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const MAIN_MENU = [
-  { label: "Home", href: "/" },
-  { label: "Features", href: "/#products" },
-  { label: "About", href: "/#services" },
-  { label: "Support", href: "/#projects" },
+const menu = [
+  {
+    title: "Home",
+    href: "#",
+  },
+  {
+    title: "Feature",
+    href: "#",
+  },
+  {
+    title: "Support",
+    href: "#",
+  },
+  {
+    title: "Donate ❤️",
+    href: "#",
+  },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 700,
       easing: "ease-out-cubic",
       once: true,
+      offset: 20,
     });
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // Close mobile menu when a link is clicked
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
-    <nav className="fixed top-4 sm:top-6 left-0 w-full z-50 flex justify-center px-4 pointer-events-none">
-      <div
-        className={`pointer-events-auto w-full max-w-5xl rounded-full flex items-center justify-between px-3 py-2 sm:px-4 sm:py-2.5 transition-all duration-500 ${
-          scrolled
-            ? "backdrop-blur-xl bg-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50"
-            : "backdrop-blur-md bg-black/20 border border-white/10"
-        }`}
-      >
+    <header
+      data-aos="fade-down"
+      className="fixed top-5 left-0 z-50 flex w-full justify-center px-4 sm:px-6"
+    >
+      <nav className="relative flex w-full max-w-6xl items-center justify-between rounded-sm border border-zinc-200 bg-white/90 px-3 shadow-xl backdrop-blur-xl transition-all duration-300">
+        
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div
-            className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-105`}
-          >
-            <Image
-              src="/logo3.svg"
-              alt="Task Vault Logo"
-              width={26}
-              height={26}
-              className="transition-transform duration-500 group-hover:rotate-6"
-            />
-          </div>
-
-          <span
-            className={`hidden sm:block text-base font-bold tracking-tight transition-colors duration-300 ${
-              scrolled ? "text-zinc-900" : "text-white"
-            }`}
-          >
-            Task Vault
-          </span>
+        <Link
+          href="/"
+          onClick={handleLinkClick}
+          className="group flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 active:rotate-2"
+        >
+          <Image
+            src="/logo.svg"
+            alt="Logo"
+            width={70}
+            height={70}
+            priority
+            className="transition-all duration-500 group-hover:rotate-6 group-active:scale-95"
+          />
         </Link>
 
-        {/* Menu */}
-        <div className="hidden lg:flex items-center gap-2">
-          {MAIN_MENU.map((item) => (
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center">
+          {menu.map((item) => (
             <Link
-              key={item.label}
+              key={item.title}
               href={item.href}
-              className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                scrolled
-                  ? "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100/80"
-                  : "text-zinc-300 hover:text-white hover:bg-white/10"
-              }`}
+              className="relative flex h-[50px] items-center justify-center border-l border-zinc-100 px-8 text-[15px] font-medium text-zinc-700 transition-all duration-300 first:border-l-0 hover:bg-zinc-50 hover:text-black active:scale-95
+                after:absolute after:bottom-4 after:left-6 after:right-6 after:origin-center after:scale-x-0 after:rounded-full after:bg-black after:transition-transform after:duration-300 hover:after:scale-x-100"
             >
-              {item.label}
+              {item.title}
             </Link>
           ))}
         </div>
 
-        {/* Button */}
-        <div className="flex items-center gap-3">
+        {/* Right Section (Sign In + Mobile Toggle) */}
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Sign In Button (Hidden on extra small screens to save space) */}
           <Link
-            href="/auth/signup"
-            className={`group inline-flex items-center gap-3 pl-5 pr-1.5 py-1.5 rounded-full shadow-lg text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl ${
-              scrolled
-                ? "bg-zinc-900 text-white hover:bg-black shadow-zinc-200/50"
-                : "bg-white text-black hover:bg-zinc-100 shadow-black/20"
-            }`}
+            href="/contact"
+            className="group hidden sm:flex items-center gap-3 rounded-sm bg-zinc-900 px-6 py-3 text-white
+              shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-2xl active:scale-95 active:rotate-1"
           >
-            <span>Sign up</span>
-
-            <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45 ${
-                scrolled ? "bg-white text-black" : "bg-black text-white"
-              }`}
-            >
-              <ArrowRight size={16} strokeWidth={2.5} />
-            </div>
+            <span className="h-2 w-2 rounded-full bg-white transition-all duration-300 group-hover:scale-150" />
+            <span className="text-sm font-medium">Sign In</span>
           </Link>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-sm border border-zinc-200 bg-zinc-50 text-zinc-700 transition-all hover:bg-zinc-100 active:scale-95 lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              // Close Icon
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            ) : (
+              // Hamburger Menu Icon
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            )}
+          </button>
         </div>
-      </div>
-    </nav>
+
+        {/* Mobile Dropdown Menu */}
+        {isMobileMenuOpen && (
+          <div className="absolute left-0 top-[calc(100%+0.5rem)] flex w-full flex-col overflow-hidden rounded-sm border border-zinc-200 bg-white/95 p-3 shadow-xl backdrop-blur-xl lg:hidden">
+            {menu.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                onClick={handleLinkClick}
+                className="flex items-center rounded-sm px-4 py-3 text-[15px] font-medium text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-black active:bg-zinc-100"
+              >
+                {item.title}
+              </Link>
+            ))}
+            
+            {/* Sign In Button for Extra Small Screens */}
+            <Link
+              href="/contact"
+              onClick={handleLinkClick}
+              className="group mt-2 flex items-center justify-center gap-3 rounded-sm bg-zinc-900 px-6 py-3 text-white shadow-lg transition-all active:scale-95 sm:hidden"
+            >
+              <span className="h-2 w-2 rounded-full bg-white" />
+              <span className="text-sm font-medium">Sign In</span>
+            </Link>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 }

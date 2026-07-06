@@ -22,7 +22,7 @@ const roboto = Roboto({
 export const metadata = {
   title: "Task Vault",
   description: "Smart Todo Web APP",
-  icons: { icon: "/logo-2.svg" },
+  icons: { icon: "/logo.svg" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -32,8 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning
         className={`${poppins.variable} ${roboto.variable} antialiased`}
       >
-
-
         <SmoothScrollProvider>
           <PageWrapper>{children}</PageWrapper>
         </SmoothScrollProvider>
