@@ -5,9 +5,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="w-full bg-white text-zinc-900 px-4 py-16 md:py-24"
+      className="w-full bg-white text-zinc-900 px-4 py-14 md:py-24"
     >
-      <main className="mx-auto max-w-6xl overflow-hidden rounded-4xl bg-black border border-zinc-800/60 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.7)]">
+      <main className="mx-auto max-w-7xl overflow-hidden rounded-4xl bg-black border border-zinc-800/60 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.7)]">
         <div className="relative overflow-hidden px-6 py-10 md:px-12 md:py-16">
           <div className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-gray-300/30 blur-3xl animate-float-orange" />
           <div className="absolute -left-24 bottom-16 h-64 w-64 rounded-full bg-gray-300/30 blur-3xl animate-float-blue" />
