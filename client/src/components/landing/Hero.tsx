@@ -154,6 +154,27 @@ export default function HeroSection() {
             View Pricing
           </a> */}
         </div>
+        {/* Stats Section (Cleaned and made responsive) */}
+        {/* <div className="relative z-20 w-full max-w-6xl mx-auto px-4 mt-24 md:mt-32">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 border-t border-zinc-200/60 pt-12 pb-8">
+          <div className="flex flex-col items-center text-center gap-1.5">
+            <span className="text-4xl md:text-5xl font-extrabold text-zinc-900 tracking-tighter">300k</span>
+            <span className="text-sm md:text-base text-zinc-500 font-medium">New users</span>
+          </div>
+          <div className="flex flex-col items-center text-center gap-1.5">
+            <span className="text-4xl md:text-5xl font-extrabold text-zinc-900 tracking-tighter">76M</span>
+            <span className="text-sm md:text-base text-zinc-500 font-medium">Assets Secured</span>
+          </div>
+          <div className="flex flex-col items-center text-center gap-1.5">
+            <span className="text-4xl md:text-5xl font-extrabold text-zinc-900 tracking-tighter">10+</span>
+            <span className="text-sm md:text-base text-zinc-500 font-medium">Years experience</span>
+          </div>
+          <div className="flex flex-col items-center text-center gap-1.5">
+            <span className="text-4xl md:text-5xl font-extrabold text-zinc-900 tracking-tighter">98%</span>
+            <span className="text-sm md:text-base text-zinc-500 font-medium">Satisfaction</span>
+          </div>
+        </div>
+      </div>  */}
       </div>
     </section>
   );

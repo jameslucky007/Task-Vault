@@ -14,22 +14,23 @@ p {
   font-family: var(--font-roboto), sans-serif;
 }
 
+
 /* REQUIRED FOR LENIS */
 html,
 body {
   height: auto !important;
   overflow: visible !important;
-  scroll-behavior: auto !important;
-  /* disable native smooth scroll */
+  scroll-behavior: smooth !important; ;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+  scroll-behavior: smooth !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
+
 
 /* 2. Testamonial Animation  */
 @keyframes scroll-right {

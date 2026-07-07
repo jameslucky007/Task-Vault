@@ -1,33 +1,23 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import AOS from "aos";
+import { Menu, X } from "lucide-react";
 import "aos/dist/aos.css";
 
 const menu = [
-  {
-    title: "Home",
-    href: "#",
-  },
-  {
-    title: "Feature",
-    href: "#",
-  },
-  {
-    title: "Support",
-    href: "#",
-  },
-  {
-    title: "Donate ❤️",
-    href: "#",
-  },
+  { title: "Home", href: "/" },
+  { title: "Feature", href: "#features" },
+  { title: "Contact Us", href: "/contact" },
+  { title: "Help", href: "/help" },
+  { title: "Support ❤️", href: "/support" },
 ];
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 700,
@@ -37,7 +27,7 @@ export default function Navbar() {
     });
   }, []);
 
-  // Close mobile menu when a link is clicked
+  // Close mobile menu on navigation
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
@@ -45,97 +35,89 @@ export default function Navbar() {
   return (
     <header
       data-aos="fade-down"
-      className="fixed top-5 left-0 z-50 flex w-full justify-center px-4 sm:px-6"
+      className="fixed top-2 sm:top-5 left-0 z-100 flex w-full justify-center px-4 sm:px-6"
     >
-      <nav className="relative flex w-full max-w-6xl items-center justify-between rounded-sm border border-zinc-200 bg-white/90 px-3 shadow-md backdrop-blur-xl transition-all duration-300">
-        
+      <nav className="relative flex w-full max-w-6xl items-center justify-between rounded-xl border border-zinc-200 bg-white/95 px-4 py-2 shadow-md backdrop-blur-xl transition-all duration-300">
         {/* Logo */}
         <Link
           href="/"
           onClick={handleLinkClick}
-          className="group flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 active:rotate-2"
+          className="group flex h-12 w-auto items-center justify-center gap-3 rounded-xl px-2 transition-transform duration-300 hover:scale-105 active:scale-95"
+          aria-label="Home"
         >
           <Image
             src="/logo.svg"
-            alt="Logo"
-            width={70}
-            height={70}
+            alt="Brand Logo"
+            width={48}
+            height={48}
             priority
-            className="transition-all duration-500 group-hover:rotate-6 group-active:scale-95"
+            className="transition-transform duration-500 group-hover:rotate-6"
           />
+          <span className="text-xl font-bold text-zinc-900">Grid Tick</span>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center">
-          {menu.map((item) => (
+          {menu.map((item, index) => (
             <Link
               key={item.title}
               href={item.href}
-              className="relative flex h-[50px] items-center justify-center border-l border-zinc-100 px-8 text-[15px] font-medium text-zinc-700 transition-all duration-300 first:border-l-0 hover:bg-zinc-50 hover:text-black active:scale-95
-                after:absolute after:bottom-4 after:left-6 after:right-6 after:origin-center after:scale-x-0 after:rounded-full after:bg-black after:transition-transform after:duration-300 hover:after:scale-x-100"
+              className={`relative flex h-12.5 items-center justify-center px-8 text-[15px] font-medium text-zinc-700 transition-colors duration-300 hover:text-black active:scale-95 ${
+                index !== 0 ? "border-l border-zinc-100" : ""
+              } after:absolute after:bottom-2 after:left-6 after:right-6 after:origin-center after:scale-x-0 after:rounded-full after:border-b-2 after:border-black after:transition-transform after:duration-300 hover:after:scale-x-100`}
             >
               {item.title}
             </Link>
           ))}
         </div>
 
-        {/* Right Section (Sign In + Mobile Toggle) */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          {/* Sign In Button (Hidden on extra small screens to save space) */}
+        {/* Sign In & Mobile Toggle */}
+        <div className="flex items-center gap-3">
           <Link
-            href="/contact"
-            className="group hidden sm:flex items-center gap-3 rounded-sm bg-zinc-900 px-6 py-3 text-white
-              shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-2xl active:scale-95 active:rotate-1"
+            href="/signup"
+            className="group hidden sm:flex items-center gap-3 rounded-lg bg-zinc-900 px-5 py-2.5 text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-lg active:scale-95"
           >
-            <span className="h-2 w-2 rounded-full bg-white transition-all duration-300 group-hover:scale-150" />
-            <span className="text-sm font-medium">Sign In</span>
+            <span className="h-2 w-2 rounded-full bg-white transition-transform duration-300 group-hover:scale-150" />
+            <span className="text-sm font-medium">Sign up</span>
           </Link>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Menu Toggle Button (Hamberger Menu) */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-sm border border-zinc-200 bg-zinc-50 text-zinc-700 transition-all hover:bg-zinc-100 active:scale-95 lg:hidden"
-            aria-label="Toggle menu"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-50 text-zinc-900 transition-colors hover:bg-zinc-200 active:scale-95 lg:hidden"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
-              // Close Icon
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
+              <X size={24} strokeWidth={2} />
             ) : (
-              // Hamburger Menu Icon
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
+              <Menu size={24} strokeWidth={2} />
             )}
           </button>
         </div>
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute left-0 top-[calc(100%+0.5rem)] flex w-full flex-col overflow-hidden rounded-sm border border-zinc-200 bg-white/95 p-3 shadow-xl backdrop-blur-xl lg:hidden">
+          <div className="absolute left-0 top-[110%] z-110 flex w-full flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white p-3 shadow-2xl lg:hidden">
             {menu.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
                 onClick={handleLinkClick}
-                className="flex items-center rounded-sm px-4 py-3 text-[15px] font-medium text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-black active:bg-zinc-100"
+                className="flex items-center rounded-lg px-4 py-3 text-[16px] font-semibold text-zinc-800 transition-colors hover:bg-zinc-100 hover:text-black active:bg-zinc-200"
               >
                 {item.title}
               </Link>
             ))}
-            
-            {/* Sign In Button for Extra Small Screens */}
+
+            {/* Mobile Sign In Button (Visible only on extra small screens) */}
             <Link
-              href="/contact"
+              href="/signup"
               onClick={handleLinkClick}
-              className="group mt-2 flex items-center justify-center gap-3 rounded-sm bg-zinc-900 px-6 py-3 text-white shadow-lg transition-all active:scale-95 sm:hidden"
+              className="group mt-3 flex items-center justify-center gap-3 rounded-lg bg-zinc-900 px-6 py-3.5 text-white shadow-md transition-all active:scale-95 sm:hidden"
             >
               <span className="h-2 w-2 rounded-full bg-white" />
-              <span className="text-sm font-medium">Sign In</span>
+              <span className="text-base font-medium">Sign Up</span>
             </Link>
           </div>
         )}
