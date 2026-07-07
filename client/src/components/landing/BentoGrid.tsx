@@ -12,7 +12,6 @@ import {
   Dumbbell,
   GlassWater,
   Flower2,
-  Menu,
   Home,
   User,
   Plus,
@@ -22,6 +21,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { ReactNode, useState, useEffect } from "react";
+import { FaApple } from "react-icons/fa6";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 const daysLabel = ["Mon", "", "Wed", "", "Fri", "", "Sun"];
 const monthsLabel = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
@@ -29,7 +30,7 @@ const monthsLabel = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
 // Generate a 7x24 grid (7 days, 24 weeks/columns)
 const generateInitialGrid = () => {
   return Array.from({ length: 7 }, () =>
-    Array.from({ length: 24 }, () => Math.random() > 0.7)
+    Array.from({ length: 30 }, () => Math.random() > 0.7)
   );
 };
 
@@ -85,7 +86,7 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-[56px] leading-[1.05] font-black tracking-tight text-zinc-950">
+                <h1 className="text-2xl md:text-3xl lg:text-[46px] leading-[1.05] font-black tracking-tight text-zinc-950">
                   Build habits.<br />
                   <span className="text-zinc-400">Change your life.</span>
                 </h1>
@@ -97,24 +98,24 @@ export default function HomePage() {
               </div>
 
               {/* STATS & DATE WIDGET */}
-              <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 mt-8 mb-8">
-                {/* Stats Group */}
-                <div className="flex flex-wrap items-center gap-4">
-                  <StatBox number="12" label="Current Streak" />
-                  <StatBox number="24" label="Best Streak" />
-                  <StatBox number="49" label="Total Days" variant="green" />
-                </div>
+  <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 mt-4 mb-4">
+  {/* Stats Group */}
+  <div className="flex flex-wrap items-center gap-4">
+    <StatBox number="12" label="Current Streak" />
+    <StatBox number="24" label="Best Streak" />
+    <StatBox number="49" label="Total Days"/>
+  </div>
 
-                {/* Date Display (Clean Borderless Version) */}
-                <div className="bg-zinc-50 rounded-[24px] px-7 py-5 flex flex-col items-end justify-center self-start xl:self-auto min-w-[220px] hover:scale-[1.03] transition-transform cursor-default">
-                  <span className="text-2xl md:text-3xl font-black text-zinc-950 tracking-tight">
-                    {currentDate}
-                  </span>
-                  <span className="text-sm font-bold text-zinc-500 mt-1 uppercase tracking-widest">
-                    {currentYear}
-                  </span>
-                </div>
-              </div>
+  {/* Date Display (Exact StatBox Green Design) */}
+  <div className="bg-black text-white border-[3px] border-zinc-950 rounded-[14px] px-4 py-2 flex flex-col items-end justify-center self-start xl:self-auto min-w-[220px] shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] transition-transform hover:-translate-y-1 hover:shadow-[4px_6px_0px_0px_rgba(24,24,27,1)] duration-200 cursor-default">
+    <span className="text-xl md:text-2xl font-black tracking-tight">
+      {currentDate}
+    </span>
+    <span className="text-sm font-bold mt-1 uppercase tracking-widest text-white/90">
+      {currentYear}
+    </span>
+  </div>
+</div>
 
               {/* INTERACTIVE GRID SECTION */}
               <div className="pt-8 border-t border-zinc-100">
@@ -179,7 +180,7 @@ export default function HomePage() {
 
           {/* RIGHT SIDE: PHONE MOCKUP */}
           <div className="w-full xl:w-[360px] flex justify-center mt-8 xl:mt-0 shrink-0">
-            <div className="w-[340px] h-[720px] rounded-[56px] border-[12px] border-zinc-900 bg-[#f8f8f9] overflow-hidden relative shadow-2xl">
+            <div className="w-[340px] h-[680px] rounded-[56px] border-[12px] border-zinc-900 bg-[#f8f8f9] overflow-hidden relative shadow-2xl">
               
               {/* Dynamic Island */}
               <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[120px] h-[32px] bg-black rounded-full z-20" />
@@ -202,15 +203,15 @@ export default function HomePage() {
                       Today
                     </h2>
                     <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-zinc-200 shadow-sm cursor-pointer hover:bg-zinc-50 transition-colors">
-                      <Menu className="text-zinc-900 w-5 h-5" />
+                      <User className="text-zinc-900 w-5 h-5" />
                     </div>
                   </div>
 
                   {/* PROGRESS WIDGET */}
-                  <div className="bg-white rounded-[28px] p-6 border border-zinc-200 mb-8 shadow-sm">
+                  <div className="bg-white rounded-[28px] p-3 border border-zinc-200 mb-5 shadow-sm">
                     <div className="flex items-center gap-6">
                       {/* CIRCLE */}
-                      <div className="relative w-[72px] h-[72px] shrink-0">
+                      <div className="relative w-[72px] h-[65px] shrink-0">
                         <svg className="w-[72px] h-[72px] -rotate-90" viewBox="0 0 120 120">
                           <circle cx="60" cy="60" r="50" stroke="#f4f4f5" strokeWidth="12" fill="none" />
                           <circle
@@ -230,9 +231,6 @@ export default function HomePage() {
                         <p className="text-xl font-black text-zinc-950 leading-tight">
                           Great job!
                         </p>
-                        <p className="text-zinc-500 font-medium text-sm mt-0.5">
-                          Keep it up.
-                        </p>
                       </div>
                     </div>
                   </div>
@@ -245,7 +243,6 @@ export default function HomePage() {
                     <div className="space-y-3.5">
                       <HabitItem icon={<Dumbbell size={20} />} title="Workout" />
                       <HabitItem icon={<BookOpen size={20} />} title="Read Book" />
-                      <HabitItem icon={<GlassWater size={20} />} title="Drink Water" />
                       <HabitItem icon={<Flower2 size={20} />} title="Meditate" />
                     </div>
                   </div>
@@ -253,16 +250,16 @@ export default function HomePage() {
 
                 {/* BOTTOM NAVBAR (Fixed at bottom of phone) */}
                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md border border-zinc-200 rounded-[28px] px-6 py-4 flex items-center justify-between shadow-xl">
-                  <Home className="text-zinc-900 w-6 h-6 cursor-pointer hover:scale-110 transition-transform" />
-                  <BarChart3 className="text-zinc-400 w-6 h-6 cursor-pointer hover:text-zinc-900 transition-colors" />
+                  <Home className="text-zinc-900 w-4 h-4 cursor-pointer hover:scale-110 transition-transform" />
+                  <BarChart3 className="text-zinc-400 w-4 h-4 cursor-pointer hover:text-zinc-900 transition-colors" />
                   
                   {/* FAB Button */}
-                  <div className="w-14 h-14 rounded-2xl bg-black flex items-center justify-center -mt-10 shadow-lg shadow-black/20 cursor-pointer hover:-translate-y-1 transition-transform">
-                    <Plus className="text-white w-7 h-7" />
+                  <div className="w-10 h-10 rounded-2xl bg-black flex items-center justify-center -mt-10 shadow-lg shadow-black/20 cursor-pointer hover:-translate-y-1 transition-transform">
+                    <Plus className="text-white w-4 h-4" />
                   </div>
                   
-                  <Calendar className="text-zinc-400 w-6 h-6 cursor-pointer hover:text-zinc-900 transition-colors" />
-                  <User className="text-zinc-400 w-6 h-6 cursor-pointer hover:text-zinc-900 transition-colors" />
+                  <Calendar className="text-zinc-400 w-4 h-4 cursor-pointer hover:text-zinc-900 transition-colors" />
+                  <User className="text-zinc-400 w-4 h-4 cursor-pointer hover:text-zinc-900 transition-colors" />
                 </div>
               </div>
 
@@ -271,64 +268,95 @@ export default function HomePage() {
 
         </div>
             {/* BOTTOM ROW: EXACTLY 3 CARDS */}
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full h-full mt-8">
-              
-  {/* CARD 1: FEATURES */}
-  <div className="border border-zinc-200 rounded-[32px] p-6 bg-white text-zinc-900 shadow-xl flex flex-col justify-center h-full min-h-[280px]">
-    <div className="grid grid-cols-2 gap-4 h-full">
-      <FeatureCard icon={<Activity size={24} />} title="Habits" />
-      <FeatureCard icon={<Clock3 size={24} />} title="Time" />
-      <FeatureCard icon={<BarChart3 size={24} />} title="Progress" />
-      <FeatureCard icon={<Calendar size={24} />} title="Schedule" />
-      <FeatureCard icon={<PieChart size={24} />} title="Analytics" />
-      <FeatureCard icon={<Settings size={24} />} title="Settings" />
-    </div>
-  </div>
 
-  {/* CARD 2: STORE DOWNLOADS */}
-  <div className="bg-white border border-zinc-200 rounded-[32px] p-8 text-zinc-900 flex flex-col gap-5 justify-center shadow-xl h-full min-h-[280px]">
-    <div>
-      <h2 className="text-2xl font-black text-zinc-950 tracking-tight">
-        Get the App
-      </h2>
-      <p className="text-zinc-500 font-medium text-sm mt-1">
-        Available on all devices
-      </p>
-    </div>
-    
-    <div className="flex flex-col gap-3">
-      <StoreButton
-        icon={
-          <Image src="/apple-logo.svg" alt="Apple" width={26} height={26} />
-        }
-        title="Download on the"
-        subtitle="App Store"
-      />
-      <StoreButton
-        icon={
-          <Image src="/play-store-logo.svg" alt="Google Play" width={26} height={26} />
-        }
-        title="GET IT ON"
-        subtitle="Google Play"
-      />
-    </div>
-  </div>
 
-  {/* CARD 3: WRITE NOTES (Interactive Typing Area) */}
-  <div className="bg-white border border-zinc-200 rounded-[32px] p-8 text-zinc-900 flex flex-col gap-4 shadow-xl h-full min-h-[280px] focus-within:border-zinc-400 focus-within:shadow-2xl transition-all duration-300 group">
-    <div>
-      <h2 className="text-2xl font-black text-zinc-950 tracking-tight">
-        Write Notes
-      </h2>
-    </div>
-    {/* Textarea provides native blinking cursor and typing functionality */}
-    <textarea 
-      className="w-full flex-1 resize-none bg-transparent outline-none text-zinc-700 placeholder:text-zinc-300 font-medium text-base leading-relaxed caret-black"
-      placeholder="type here...."
-    ></textarea>
-  </div>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full mt-8">
+      
+      {/* CARD 1: CORE FEATURES */}
+      <div className="bg-white border border-zinc-200 rounded-[32px] p-8 text-zinc-900 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col h-full min-h-[320px]">
+        <div className="mb-6">
+          <h2 className="text-2xl font-black text-zinc-950 tracking-tight">
+            Track Everything
+          </h2>
+          <p className="text-zinc-500 font-medium text-sm mt-1">
+            All the tools you need in one place.
+          </p>
+        </div>
+        
+        {/* Adjusted to grid-cols-2 with smaller gaps to fit nicely under the header */}
+        <div className="grid grid-cols-2 gap-3 flex-1">
+          {/* Note: Update your <FeatureCard /> component to fit this tighter spacing if needed, 
+              or use this raw HTML version for immediate results */}
+          {[
+            { icon: <Activity size={18} />, title: "Habits" },
+            { icon: <Clock3 size={18} />, title: "Time" },
+            { icon: <BarChart3 size={18} />, title: "Progress" },
+            { icon: <Calendar size={18} />, title: "Schedule" },
+            { icon: <PieChart size={18} />, title: "Analytics" },
+            { icon: <Settings size={18} />, title: "Settings" },
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-3 p-3 rounded-2xl border border-zinc-100 bg-zinc-50 hover:bg-zinc-100 transition-colors text-zinc-700 font-semibold text-sm">
+              <span className="text-zinc-400">{item.icon}</span>
+              {item.title}
+            </div>
+          ))}
+        </div>
+      </div>
 
-</div>
+      {/* CARD 2: WRITE NOTES (App-like Interface) */}
+      <div className="bg-zinc-50 border border-zinc-200 rounded-[32px] p-8 flex flex-col shadow-sm hover:shadow-xl transition-all duration-300 group h-full min-h-[320px] relative overflow-hidden">
+        <div className="mb-4 relative z-10">
+          <h2 className="text-2xl font-black text-zinc-950 tracking-tight">
+            Fast Note-taking
+          </h2>
+          <p className="text-zinc-500 font-medium text-sm mt-1">
+            Jot down your thoughts instantly.
+          </p>
+        </div>
+        
+        {/* Editor look: White inset box on a gray background */}
+        <div className="flex-1 flex flex-col relative z-10">
+          <textarea 
+            className="w-full flex-1 resize-none bg-white border border-zinc-200 rounded-2xl p-5 outline-none text-zinc-700 placeholder:text-zinc-400 font-medium text-base leading-relaxed caret-black focus:border-zinc-400 focus:ring-4 focus:ring-zinc-200/50 transition-all shadow-sm"
+            placeholder="Type your brilliant idea here..."
+          ></textarea>
+        </div>
+      </div>
+
+      {/* CARD 3: CROSS PLATFORM (Dark Mode to anchor the grid visually) */}
+      <div className="bg-white border border-zinc-800 rounded-[32px] p-8 flex flex-col justify-between shadow-xl h-full min-h-[320px]">
+        <div>
+          <h2 className="text-2xl font-black text-black tracking-tight">
+            Cross-Platform
+          </h2>
+          <p className="text-zinc-400 font-medium text-sm mt-1">
+            Available seamlessly on all devices.
+          </p>
+        </div>
+        
+        <div className="flex flex-col gap-3 mt-6">
+          {/* Custom dark-mode store buttons */}
+          <button className="flex items-center gap-4 p-4 w-full bg-white border border-zinc-800 rounded-2xl transition-colors group text-left">
+            <FaApple width={40} height={40} className="invert" />
+            <div className="flex-1">
+              <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Download on the</p>
+              <p className="text-black font-bold text-lg leading-none mt-1">App Store</p>
+            </div>
+            <span className="text-zinc-600  transition-colors">→</span>
+          </button>
+
+          <button className="flex items-center gap-4 p-4 w-full bg-white border border-zinc-800 rounded-2xl transition-colors group text-left">
+             <IoLogoGooglePlaystore className="invert" width={40} height={40} />
+            <div className="flex-1">
+              <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Get it on</p>
+              <p className="text-black font-bold text-lg leading-none mt-1">Google Play</p>
+            </div>
+            <span className="text-zinc-600  transition-colors">→</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
       </div>
     </main>
   );
@@ -347,9 +375,9 @@ function StatBox({ number, label, variant = "default" }: StatBoxProps) {
   return (
     <div
       className={`
-        border-[3px] border-zinc-950 rounded-[14px] p-3 md:px-5 md:py-3.5 min-w-[105px] md:min-w-[120px]
+        border-[3px] border-zinc-950 rounded-[14px] p-2 md:px-3 md:py-2 min-w-[100px] md:min-w-[110px]
         shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] flex flex-col justify-center transition-transform hover:-translate-y-1 hover:shadow-[4px_6px_0px_0px_rgba(24,24,27,1)] duration-200
-        ${isGreen ? "bg-[#43b97f] text-white" : "bg-white text-zinc-950"}
+        ${isGreen ? "bg-black text-white" : "bg-white text-zinc-950"}
       `}
     >
       <span className="text-3xl md:text-4xl font-black leading-none tracking-tight">

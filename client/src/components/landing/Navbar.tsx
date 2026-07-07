@@ -47,7 +47,7 @@ export default function Navbar() {
       data-aos="fade-down"
       className="fixed top-5 left-0 z-50 flex w-full justify-center px-4 sm:px-6"
     >
-      <nav className="relative flex w-full max-w-6xl items-center justify-between rounded-sm border border-zinc-200 bg-white/90 px-3 shadow-xl backdrop-blur-xl transition-all duration-300">
+      <nav className="relative flex w-full max-w-6xl items-center justify-between rounded-sm border border-zinc-200 bg-white/90 px-3 shadow-md backdrop-blur-xl transition-all duration-300">
         
         {/* Logo */}
         <Link

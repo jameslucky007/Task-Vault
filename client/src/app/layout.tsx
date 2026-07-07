@@ -22,7 +22,7 @@ const roboto = Roboto({
 export const metadata = {
   title: "Task Vault",
   description: "Smart Todo Web APP",
-  icons: { icon: "/logo.svg" },
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

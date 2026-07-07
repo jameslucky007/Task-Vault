@@ -1,104 +1,76 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-  FaGlobeAsia,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const navLinks = [
     { name: "Home", href: "#" },
-    { name: "Support", href: "#" },
+    { name: "Conact Us", href: "#" },
     { name: "Privacy Policy", href: "#" },
     { name: "Terms of Service", href: "#" },
   ];
 
-  const socialLinks = [
-    {
-      icon: <FaYoutube size={22} />,
-      href: "https://youtube.com",
-      label: "YouTube",
-    },
-    {
-      icon: <FaXTwitter size={22} />,
-      href: "https://twitter.com",
-      label: "Twitter",
-    },
-    {
-      icon: <FaInstagram size={22} />,
-      href: "https://instagram.com",
-      label: "Instagram",
-    },
-    {
-      icon: <FaLinkedin size={22} />,
-      href: "https://linkedin.com",
-      label: "LinkedIn",
-    },
-    {
-      icon: <FaGlobeAsia size={22} />,
-      href: "https://luckya.vercel.app/",
-      label: "Website",
-    },
-  ];
-
   return (
-    <footer className="w-full bg-black pt-6 md:pt-10 px-4 sm:px-6 md:px-8 text-white">
-      <div className="max-w-7xl mx-auto bg-[#0a0a0a] rounded-3xl md:rounded-[2.5rem] p-6 sm:p-8 md:p-12 text-center border border-white/5 shadow-2xl">
-        
-        {/* Logo & Brand */}
-        <div className="flex justify-center items-center gap-3 sm:gap-4 mb-6 md:mb-8">
-          <Image
-            src="/logo-2.svg"
-            width={40}
-            height={40}
-            alt="Task Vault Logo"
-            className="w-8 h-8 sm:w-10 sm:h-10"
-          />
-          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-wide">
-            Task Vault
-          </h2>
+    <footer className="w-full bg-black pt-16 pb-4 px-4 sm:px-6 md:px-4 text-white font-sans overflow-hidden">
+      <div className="max-w-6xl mx-auto relative">
+        {/* Optional: Subtle ambient glow behind the card */}
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 to-transparent blur-3xl -z-10 rounded-full" />
+
+        {/* Main Footer Card */}
+        <div className="bg-[#0A0A0B] rounded-[2rem] border border-white/5 p-8 md:p-6 shadow-2xl flex flex-col items-center">
+          
+          {/* Logo & Brand Identity */}
+          <div className="flex flex-col items-center mb-10">
+            {/* White Circle Background for Logo */}
+            <div className="flex items-center justify-center w-16 h-16  bg-white/90  rounded-full shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-5 transition-all duration-300 hover:scale-105 active:scale-95 active:rotate-2">
+              <Image
+                src="/logo.svg"
+                width={32}
+                height={32}
+                alt="Task Vault Logo"
+                className="w-12 h-12"
+              />
+            </div>
+            
+            <h2 className="text-2xl sm:text-2xl font-semibold text-white tracking-tight mb-2">
+              Grid Tick
+            </h2>
+            <p className="text-zinc-500 text-sm sm:text-base text-center max-w-sm">
+              Master your focus. Simplify your workflow.
+            </p>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-4 mb-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-zinc-400 transition-colors duration-300 relative group"
+              >
+                {link.name}
+                {/* Minimalist hover underline effect */}
+                <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
+          </nav>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8 md:mb-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm sm:text-base text-gray-400 hover:text-white transition-all duration-300 ease-in-out"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Social Icons */}
-        <div className="flex justify-center gap-5 sm:gap-6">
-          {socialLinks.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-              aria-label={social.label}
-            >
-              {social.icon}
-            </a>
-          ))}
+        {/* Bottom Strip */}
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-8 px-4 md:px-8 gap-4">
+          <p className="text-zinc-500 text-xs sm:text-sm tracking-wide">
+            © {new Date().getFullYear()} Task Vault. All rights reserved.
+          </p>
+          
+          {/* Status Indicator */}
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            All systems operational
+          </div>
         </div>
-      </div>
-
-      {/* Footer Strip */}
-      <div className="max-w-6xl mx-auto mt-2 text-center py-6 px-4">
-        <hr className="mb-4 border-white/10" />
-        <p className="text-gray-500 text-xs sm:text-sm md:text-base tracking-wide">
-          Copyright {new Date().getFullYear()} © Task Vault
-        </p>
       </div>
     </footer>
   );
