@@ -46,7 +46,7 @@ export default function Sidebar() {
 
       {/* Settings at Bottom */}
       <div className="mt-auto pt-8">
-        <a href="/dashboard/analytics" className="flex items-center gap-3 rounded-full px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-black">
+        <a href="/dashboard/settings" className="flex items-center gap-3 rounded-full px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-black">
           <Settings className="h-5 w-5" /> Settings
         </a>
       </div>
