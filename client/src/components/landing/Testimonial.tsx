@@ -48,7 +48,7 @@ interface TestimonialCardProps {
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ t }) => {
   return (
     <div className="bg-white w-[280px] md:w-[360px] shrink-0 rounded-2xl p-6 border border-zinc-200 hover:border-zinc-300 transition-colors duration-300 shadow-sm">
-      <FaQuoteLeft className="text-zinc-300 mb-4 text-xl md:text-2xl" />
+      <FaQuoteLeft className="text-blue-300 mb-4 text-xl md:text-2xl" />
 
       <p className="text-zinc-650 mb-6 leading-relaxed text-sm md:text-base">
         {t.text}

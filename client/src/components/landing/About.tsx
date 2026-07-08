@@ -133,7 +133,7 @@ const About = () => {
         <div className="h-1.5 w-1.5 rounded-full bg-zinc-200" />
         <div className="h-1.5 w-1.5 rounded-full bg-zinc-200" />
         {/* Active Gradient Bar */}
-        <div className="h-1.5 w-6 rounded-full bg-gradient-to-r from-indigo-300 via-purple-300 to-orange-300" />
+        <div className="h-1.5 w-6 rounded-full bg-gradient-to-r from-indigo-300 via-purple-300 to-blue-300" />
         <div className="h-1.5 w-1.5 rounded-full bg-zinc-200" />
         <div className="h-1.5 w-1.5 rounded-full bg-zinc-200" />
       </div>

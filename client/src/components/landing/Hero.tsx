@@ -82,7 +82,7 @@ export default function HeroSection() {
             {blinkingBoxes.map((box) => (
               <div
                 key={box.id}
-                className="absolute bg-zinc-900/5 transition-all rounded-sm"
+                className="absolute bg-zinc-200 transition-all rounded-sm"
                 style={{
                   width: "61px", // Fits exactly inside the 62px grid cell (minus the 1px border)
                   height: "61px", // Fits exactly inside the 62px grid cell (minus the 1px border)

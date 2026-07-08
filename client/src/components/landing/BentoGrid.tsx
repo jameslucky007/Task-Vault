@@ -107,7 +107,7 @@ export default function HomePage() {
   </div>
 
   {/* Date Display (Exact StatBox Green Design) */}
-  <div className="bg-black text-white border-[3px] border-zinc-950 rounded-[14px] px-4 py-2 flex flex-col items-end justify-center self-start xl:self-auto min-w-[220px] shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] transition-transform hover:-translate-y-1 hover:shadow-[4px_6px_0px_0px_rgba(24,24,27,1)] duration-200 cursor-default">
+  <div className="bg-blue-300 text-white border-[3px] border-zinc-950 rounded-[14px] px-4 py-2 flex flex-col items-end justify-center self-start xl:self-auto min-w-[220px] shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] transition-transform hover:-translate-y-1 hover:shadow-[4px_6px_0px_0px_rgba(24,24,27,1)] duration-200 cursor-default">
     <span className="text-xl md:text-2xl font-black tracking-tight">
       {currentDate}
     </span>
