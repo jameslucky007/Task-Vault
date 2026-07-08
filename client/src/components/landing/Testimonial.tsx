@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
@@ -37,41 +38,57 @@ const testimonials = [
   },
 ];
 
-const TestimonialCard = ({ t }) => (
-  <div className="bg-white w-[280px] md:w-[360px] shrink-0 rounded-2xl p-6 border border-zinc-200 hover:border-zinc-300 transition-colors duration-300 shadow-sm">
-    <FaQuoteLeft className="text-zinc-300 mb-4 text-xl md:text-2xl" />
-    <p className="text-zinc-650 mb-6 leading-relaxed text-sm md:text-base">
-      {t.text}
-    </p>
+// Automatically infer the type from the testimonials array
+type TestimonialType = (typeof testimonials)[number];
 
-    <div className="flex items-center gap-3">
-      <Image
-        src={t.avatar}
-        width={44}
-        height={44}
-        alt={t.name}
-        className="rounded-full object-cover shadow-sm border border-zinc-200"
-      />
-      <div>
-        <p className="font-semibold text-zinc-900 text-sm md:text-base leading-tight">
-          {t.name}
-        </p>
-        <p className="text-xs md:text-sm text-zinc-500">{t.role}</p>
+interface TestimonialCardProps {
+  t: TestimonialType;
+}
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ t }) => {
+  return (
+    <div className="bg-white w-[280px] md:w-[360px] shrink-0 rounded-2xl p-6 border border-zinc-200 hover:border-zinc-300 transition-colors duration-300 shadow-sm">
+      <FaQuoteLeft className="text-zinc-300 mb-4 text-xl md:text-2xl" />
+
+      <p className="text-zinc-650 mb-6 leading-relaxed text-sm md:text-base">
+        {t.text}
+      </p>
+
+      <div className="flex items-center gap-3">
+        <Image
+          src={t.avatar}
+          width={44}
+          height={44}
+          alt={t.name}
+          className="rounded-full object-cover shadow-sm border border-zinc-200"
+        />
+
+        <div>
+          <p className="font-semibold text-zinc-900 text-sm md:text-base leading-tight">
+            {t.name}
+          </p>
+
+          <p className="text-xs md:text-sm text-zinc-500">
+            {t.role}
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Testimonial = () => {
-  const rowStyles = "flex gap-6 group-hover:[animation-play-state:paused]";
+  const rowStyles =
+    "flex gap-6 group-hover:[animation-play-state:paused]";
+
   return (
     <section className="w-full bg-[#fafafa] py-12 md:py-20 overflow-hidden border-b border-zinc-100">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-10 md:mb-16 px-4 text-zinc-900 tracking-tight">
-        Words of praise from others <br className="hidden md:block" /> about our
-        presence.
+        Words of praise from others <br className="hidden md:block" />
+        about our presence.
       </h2>
 
-      {/* ROW 1 — Left to Right */}
+      {/* Row 1 */}
       <div className="group overflow-hidden w-full mb-6 md:mb-10">
         <div className={`${rowStyles} animate-scroll-right`}>
           {[...testimonials, ...testimonials].map((t, i) => (
@@ -80,7 +97,7 @@ const Testimonial = () => {
         </div>
       </div>
 
-      {/* ROW 2 — Right to Left */}
+      {/* Row 2 */}
       <div className="group overflow-hidden w-full">
         <div className={`${rowStyles} animate-scroll-left`}>
           {[...testimonials, ...testimonials].map((t, i) => (
