@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaGoogle, FaApple, FaMicrosoft } from "react-icons/fa";
 import { Eye, EyeOff } from "lucide-react";
+import Image from "next/image";
 
 interface AuthSignupProps {
   onSwitch: () => void;
@@ -49,13 +50,15 @@ export default function AuthSignup({ onSwitch }: AuthSignupProps) {
 
         {/* Logo */}
 
-        <div className="flex justify-center mb-6">
-
-          <div className="w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-            G
-          </div>
-
-        </div>
+       <div className="flex justify-center mb-6">
+  <Image
+    src="/logo.svg"
+    alt="Task Vault Logo"
+    width={80}
+    height={80}
+    priority
+  />
+</div>
 
         {/* Heading */}
 

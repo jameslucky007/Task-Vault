@@ -143,13 +143,13 @@ export default function HeroSection() {
             Get Started
           </Button>
 
-          {/* <a
+          <a
             href="#pricing"
-            className="group inline-flex items-center justify-center gap-2 bg-white text-zinc-900 border border-zinc-200 font-medium px-8 py-3.5 sm:py-4 rounded-xl shadow-sm w-full sm:w-auto hover:bg-zinc-50 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+            className="group inline-flex items-center justify-center gap-2 bg-white text-zinc-900 border border-zinc-200 font-medium px-8 py-3.5 sm:py-4 rounded-md shadow-sm w-full sm:w-auto hover:bg-zinc-50 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
           >
              <span className="w-2 h-2 rounded-full bg-zinc-400 group-hover:bg-zinc-600 transition-colors duration-300" />
-            View Pricing
-          </a> */}
+             Documentation
+          </a>
         </div>
         {/* Stats Section (Cleaned and made responsive) */}
         {/* <div className="relative z-20 w-full max-w-6xl mx-auto px-4 mt-24 md:mt-32">
