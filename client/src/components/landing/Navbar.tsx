@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import { Menu, X } from "lucide-react";
 import "aos/dist/aos.css";
+import Button from "../ui/Button";
 
 const menu = [
   { title: "Home", href: "/" },
   { title: "Feature", href: "#features" },
-  { title: "Contact Us", href: "/contact" },
   { title: "Help", href: "/help" },
   { title: "Support ❤️", href: "/support" },
 ];
@@ -72,29 +72,14 @@ export default function Navbar() {
         </div>
 
         {/* Sign In & Mobile Toggle */}
-        <div className="flex items-center gap-3">
-          <Link
-            href="/signup"
-            className="group hidden sm:flex items-center gap-3 rounded-lg bg-zinc-900 px-5 py-2.5 text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:shadow-lg active:scale-95"
-          >
-            <span className="h-2 w-2 rounded-full bg-white transition-transform duration-300 group-hover:scale-150" />
-            <span className="text-sm font-medium">Sign up</span>
-          </Link>
+      <Button
+  href="/auth/login"
+  className="px-6 py-2 sm:py-3 text-sm"
+>
+  Log in
+</Button>
 
-          {/* Mobile Menu Toggle Button (Hamberger Menu) */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-50 text-zinc-900 transition-colors hover:bg-zinc-200 active:scale-95 lg:hidden"
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? (
-              <X size={24} strokeWidth={2} />
-            ) : (
-              <Menu size={24} strokeWidth={2} />
-            )}
-          </button>
-        </div>
+  
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
@@ -109,16 +94,6 @@ export default function Navbar() {
                 {item.title}
               </Link>
             ))}
-
-            {/* Mobile Sign In Button (Visible only on extra small screens) */}
-            <Link
-              href="/signup"
-              onClick={handleLinkClick}
-              className="group mt-3 flex items-center justify-center gap-3 rounded-lg bg-zinc-900 px-6 py-3.5 text-white shadow-md transition-all active:scale-95 sm:hidden"
-            >
-              <span className="h-2 w-2 rounded-full bg-white" />
-              <span className="text-base font-medium">Sign Up</span>
-            </Link>
           </div>
         )}
       </nav>

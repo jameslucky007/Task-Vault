@@ -2,7 +2,6 @@ import { Poppins, Roboto, Geist } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "../components/wrappers/SmoothScrollProvider";
 import PageWrapper from "../components/wrappers/PageWrapper";
-import Footer from "../components/landing/Footer";
 import { cn } from "../utils/cn";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -27,7 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+<html suppressHydrationWarning={true} lang="en" className={cn("font-sans", geist.variable)}>
       <body
         suppressHydrationWarning
         className={`${poppins.variable} ${roboto.variable} antialiased`}
@@ -35,8 +34,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScrollProvider>
           <PageWrapper>{children}</PageWrapper>
         </SmoothScrollProvider>
-
-        <Footer />
       </body>
     </html>
   );

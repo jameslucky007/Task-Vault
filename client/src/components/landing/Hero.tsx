@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Button from "../ui/Button";
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -109,7 +110,7 @@ export default function HeroSection() {
         >
           <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md border border-zinc-200/80 text-zinc-700 px-5 py-2 sm:px-8 sm:py-2 rounded-full text-sm sm:text-base font-semibold shadow-sm hover:shadow-md transition-shadow duration-300 cursor-default">
             {/* Bigger, smoothly bouncing dot with a subtle glow */}
-            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 animate-smooth-bounce shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-blue-500 animate-smooth-bounce shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
             Version 0.0.1 
           </div>
         </div>
@@ -138,13 +139,9 @@ export default function HeroSection() {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          <a
-            href="#contact"
-            className="group inline-flex items-center justify-center gap-2 bg-zinc-900 text-white font-medium px-8 py-3.5 sm:py-4 rounded-xl shadow-lg shadow-zinc-900/20 w-full sm:w-auto hover:bg-zinc-800 hover:-translate-y-1 hover:shadow-xl hover:shadow-zinc-900/30 transition-all duration-300 border border-zinc-800"
-          >
-            <span className="w-2 h-2 rounded-full bg-white/80 group-hover:animate-ping" />
+          <Button href="/auth/register">
             Get Started
-          </a>
+          </Button>
 
           {/* <a
             href="#pricing"
