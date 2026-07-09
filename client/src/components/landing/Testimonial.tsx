@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
+import { TestimonialData } from "@/src/types/testimonial";
 
 // Testimonials data
 const testimonials = [
@@ -38,16 +39,13 @@ const testimonials = [
   },
 ];
 
-// Automatically infer the type from the testimonials array
-type TestimonialType = (typeof testimonials)[number];
-
 interface TestimonialCardProps {
-  t: TestimonialType;
+  t: TestimonialData;
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ t }) => {
   return (
-    <div className="bg-white w-[280px] md:w-[360px] shrink-0 rounded-2xl p-6 border border-zinc-200 hover:border-zinc-300 transition-colors duration-300 shadow-sm">
+<div className="bg-white w-70 md:w-90 shrink-0 rounded-2xl p-6 border border-zinc-200 hover:border-zinc-300 transition-colors duration-300 shadow-sm">
       <FaQuoteLeft className="text-blue-300 mb-4 text-xl md:text-2xl" />
 
       <p className="text-zinc-650 mb-6 leading-relaxed text-sm md:text-base">

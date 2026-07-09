@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
@@ -12,8 +11,7 @@ export default function SmoothScrollProvider({
   const pathname = usePathname();
 
   const disableLenis =
-    pathname.startsWith("/dashboard") ||
-    pathname.startsWith("/auth");
+    pathname.startsWith("/dashboard") || pathname.startsWith("/auth");
 
   useEffect(() => {
     if (disableLenis) return;

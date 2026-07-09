@@ -31,8 +31,7 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number>(2);
-
+  const [open, setOpen] = useState<number>(1);
   return (
     <section className="py-28 bg-[#f7f7f5]">
       <div className="max-w-5xl mx-auto px-6">

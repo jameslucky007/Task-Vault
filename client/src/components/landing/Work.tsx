@@ -30,9 +30,6 @@ const features = [
 const Work = () => {
   return (
     <>
-      
-     
-
       {/* Features Section */}
       <div className="w-full bg-white py-16 md:py-24 px-4 border-b border-zinc-100">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -45,18 +42,15 @@ const Work = () => {
               <div className="w-12 h-12 mb-6 rounded-2xl bg-white border border-zinc-100 shadow-sm text-zinc-900 flex items-center justify-center text-xl font-bold group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out">
                 {item.icon}
               </div>
-
               {/* Label */}
               <p className="text-[11px] tracking-[0.25em] uppercase text-zinc-400 font-bold mb-3">
                 {item.label}
               </p>
-
               {/* Title */}
               <h3 className="text-xl md:text-2xl font-bold tracking-tight leading-snug text-zinc-900 mb-3">
                 {item.title}
               </h3>
-
-              {/* Description (flex-grow pushes it to fill space, keeping cards equal height) */}
+              {/* Description */}
               <p className="text-zinc-500 text-sm md:text-base leading-relaxed font-medium flex-grow">
                 {item.desc}
               </p>

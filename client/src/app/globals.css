@@ -108,3 +108,20 @@ body {
 .animate-float-blue {
   animation: float-blue 22s ease-in-out infinite;
 }
+
+
+/* Blink Box Animation */
+
+@keyframes blinkBox {
+  0%, 100% { opacity: 0; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes smoothBounce {
+  0%, 100% { transform: translateY(-20%); }
+  50% { transform: translateY(20%); }
+}
+
+.animate-smooth-bounce {
+  animation: smoothBounce 2.5s ease-in-out infinite;
+}

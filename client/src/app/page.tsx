@@ -5,11 +5,13 @@ import Testimonial from "../components/landing/Testimonial";
 import Hero from "../components/landing/Hero";
 import BentoGrid from "../components/landing/BentoGrid";
 import Footer from "../components/landing/Footer";
+import Navbar from "../components/landing/Navbar";
 
 
 const page = () => {
   return (
     <>
+    <Navbar/>
       <Hero />
       <Work />
       <BentoGrid />

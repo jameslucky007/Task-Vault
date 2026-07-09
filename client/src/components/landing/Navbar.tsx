@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import { Menu, X } from "lucide-react";
 import "aos/dist/aos.css";
-import Button from "../ui/Button";
 
 const menu = [
   { title: "Home", href: "/" },
@@ -72,14 +71,13 @@ export default function Navbar() {
         </div>
 
         {/* Sign In & Mobile Toggle */}
-      <Button
-  href="/auth/login"
-  className="px-6 py-2 sm:py-3 text-sm"
->
-  Log in
-</Button>
-
-  
+        <a
+          href="/auth/login"
+          className="group inline-flex items-center justify-center gap-2 bg-zinc-900 text-white font-medium px-5 py-2 sm:py-3 rounded-sm shadow-lg shadow-zinc-900/20 w-full sm:w-auto hover:bg-zinc-800 hover:-translate-y-1 hover:shadow-xl hover:shadow-zinc-900/30 transition-all duration-300 border border-zinc-8000"
+        >
+          <span className="w-2 h-2 rounded-full bg-white/80 group-hover:animate-ping" />
+          Sign In
+        </a>
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (

@@ -13,15 +13,13 @@ const Footer = () => {
   return (
     <footer className="w-full bg-black pt-16 pb-4 px-4 sm:px-6 md:px-4 text-white font-sans overflow-hidden">
       <div className="max-w-6xl mx-auto relative">
-        {/* Optional: Subtle ambient glow behind the card */}
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-800/20 to-transparent blur-3xl -z-10 rounded-full" />
-
         {/* Main Footer Card */}
-        <div className="bg-[#0A0A0B] rounded-[2rem] border border-white/5 p-8 md:p-6 shadow-2xl flex flex-col items-center">
+        <div className="bg-[#0A0A0B] rounded-4xl border border-white/5 p-8 md:p-6 shadow-2xl flex flex-col items-center">
           
-          {/* Logo & Brand Identity */}
+          {/* Logo */}
           <div className="flex flex-col items-center mb-10">
-            {/* White Circle Background for Logo */}
+            {/* White Circle Background */}
             <div className="flex items-center justify-center w-16 h-16  bg-white/90  rounded-full shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-5 transition-all duration-300 hover:scale-105 active:scale-95 active:rotate-2">
               <Image
                 src="/logo.svg"
@@ -49,7 +47,6 @@ const Footer = () => {
                 className="text-sm font-medium text-zinc-400 transition-colors duration-300 relative group"
               >
                 {link.name}
-                {/* Minimalist hover underline effect */}
                 <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
