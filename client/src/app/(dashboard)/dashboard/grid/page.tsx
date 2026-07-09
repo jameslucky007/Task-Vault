@@ -56,7 +56,7 @@ const LifeCalendar = () => {
   };
 
   // Determine box sizing based on mode
-  const getBoxClass = (index) => {
+  const getBoxClass = (index: number) => {
     const isLived = index < stats.lived;
     const baseClass = 'aspect-square rounded-[1px] transition-colors duration-300';
     
