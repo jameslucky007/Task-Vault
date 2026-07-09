@@ -1,4 +1,4 @@
-import { LayoutDashboard, Calendar, CheckSquare, BarChart2, Folder, Settings, Plus } from 'lucide-react';
+import { LayoutDashboard, Calendar, CheckSquare, BarChart2, Folder, Settings, Plus, NotebookPen } from 'lucide-react';
 
 export default function Sidebar() {
   return (
@@ -25,6 +25,9 @@ export default function Sidebar() {
         </a>
         <a href="#" className="flex items-center gap-3 rounded-full px-4 py-3 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-black transition-colors">
           <Folder className="h-5 w-5" /> Documents
+        </a>
+         <a href="/dashboard/notes" className="flex items-center gap-3 rounded-full px-4 py-3 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-black transition-colors">
+          <NotebookPen className="h-5 w-5" /> Notes
         </a>
       </nav>
 
