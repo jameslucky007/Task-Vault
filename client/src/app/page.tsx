@@ -8,8 +8,7 @@ import Price from "../components/landing/Price";
 import FAQ from "../components/landing/FAQ";
 import Footer from "../components/landing/Footer";
 
-
-const page = () => {
+const Page = () => {
   return (
     <>
       <Navbar />
