@@ -10,7 +10,7 @@ const menu = [
   { title: "Home", href: "/" },
   { title: "Feature", href: "#features" },
   { title: "Help", href: "/help" },
-  { title: "Support ❤️", href: "/support" },
+  { title: "Price", href: "#Price" },
 ];
 
 export default function Navbar() {
