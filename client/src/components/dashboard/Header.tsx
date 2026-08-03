@@ -1,26 +1,61 @@
-import { Search, Bell, Plus } from 'lucide-react';
+import {
+  Search,
+  Bell,
+  Plus,
+  ChevronDown,
+} from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between px-8 py-8">
-      <div>
-        <h1 className="text-3xl font-semibold tracking-tight text-black">Hi, Lucky</h1>
-      </div>
-      
-      <div className="flex items-center gap-4">
-        <button className="flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800 transition-colors">
-          <Plus className="h-4 w-4" /> Create
-        </button>
-        <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-gray-200 hover:bg-gray-50 transition-colors">
-          <Search className="h-5 w-5 text-black" />
-        </button>
-        <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-gray-200 hover:bg-gray-50 transition-colors">
-          <Bell className="h-5 w-5 text-black" />
-          <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-black"></span>
-        </button>
-        <div className="h-10 w-10 overflow-hidden rounded-full ring-1 ring-gray-200">
-          <img src="/api/placeholder/40/40" alt="User Avatar" className="h-full w-full object-cover" />
+    <header className="flex items-center justify-between rounded-3xl bg-[#F7F7F8] px-8 py-5">
+
+      {/* Left */}
+      <div className="flex items-center gap-5">
+        <div>
+          <h1 className="text-4xl font-semibold tracking-tight text-zinc-900">
+            Dashboard
+          </h1>
+
+          <p className="mt-1 text-sm text-zinc-500">
+            Manage your tasks, notes and schedule.
+          </p>
         </div>
+
+
+      </div>
+
+      {/* Right */}
+      <div className="flex items-center gap-3">
+
+        {/* Create */}
+        <button className="flex h-11 items-center gap-2 rounded-xl bg-black px-5 text-sm font-medium text-white transition hover:bg-zinc-800">
+          <Plus size={18} />
+          Create
+        </button>
+
+        {/* Search */}
+        <button className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-zinc-200 transition hover:bg-zinc-100">
+          <Search size={18} />
+        </button>
+
+        {/* Notifications */}
+        <button className="relative flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-zinc-200 transition hover:bg-zinc-100">
+          <Bell size={18} />
+
+          <span className="absolute right-3 top-3 h-2 w-2 rounded-full bg-red-500" />
+        </button>
+
+        {/* Profile */}
+        <button className="flex items-center gap-3 rounded-full bg-white px-2 py-1 shadow-sm ring-1 ring-zinc-200 transition hover:bg-zinc-100">
+          <img
+            src="/avatar.png"
+            alt="Profile"
+            className="h-10 w-10 rounded-full object-cover"
+          />
+
+
+        </button>
+
       </div>
     </header>
   );
