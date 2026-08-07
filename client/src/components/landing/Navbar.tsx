@@ -154,11 +154,7 @@ export default function Navbar() {
                 lg:px-8
                 lg:text-[15px]
 
-                ${
-                  index !== 0
-                    ? "border-l border-zinc-100"
-                    : ""
-                }
+                ${index !== 0 ? "border-l border-zinc-100" : ""}
               `}
             >
               {item.title}
@@ -218,21 +214,15 @@ export default function Navbar() {
               "
             />
 
-            <span className="hidden min-[400px]:inline">
-              Sign In
-            </span>
+            <span className="hidden min-[400px]:inline">Sign In</span>
 
-            <span className="min-[400px]:hidden">
-              Login
-            </span>
+            <span className="min-[400px]:hidden">Login</span>
           </Link>
 
           {/* Mobile Menu Toggle */}
           <button
             type="button"
-            onClick={() =>
-              setIsMobileMenuOpen((prev) => !prev)
-            }
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             className="
               flex
               h-9
@@ -250,17 +240,9 @@ export default function Navbar() {
             aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
-              <X
-                size={20}
-                strokeWidth={2.5}
-                className="text-zinc-900"
-              />
+              <X size={20} strokeWidth={2.5} className="text-zinc-900" />
             ) : (
-              <Menu
-                size={20}
-                strokeWidth={2.5}
-                className="text-zinc-900"
-              />
+              <Menu size={20} strokeWidth={2.5} className="text-zinc-900" />
             )}
           </button>
         </div>

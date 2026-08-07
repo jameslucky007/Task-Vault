@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import AOS from "aos";
-import { BlinkingBox } from "@/types/hero";
 import "aos/dist/aos.css";
 import Link from "next/link";
 
@@ -23,9 +22,7 @@ export default function HeroSection() {
       easing: "ease-out-cubic",
     });
 
-    // 2. Hydration safeguard & Grid Box Logic
-    setMounted(true);
-
+ 
     // Rows And Columns Calculation for Blinking Boxes 
     const generateBoxes = () => {
       const cols = Math.floor(window.innerWidth / 62);
@@ -38,7 +35,6 @@ export default function HeroSection() {
         duration: Math.random() * 2 + 1.5,
       }));
     };
-    setBlinkingBoxes(generateBoxes());
 
     // Random Blinking Boxes 
     const interval = setInterval(() => {

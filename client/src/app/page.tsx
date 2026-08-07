@@ -4,7 +4,6 @@ import BentoGrid from "../components/landing/BentoGrid";
 import Work from "../components/landing/Work";
 import About from "../components/landing/About";
 import Testimonial from "../components/landing/Testimonial";
-import Price from "../components/landing/Price";
 import FAQ from "../components/landing/FAQ";
 import Footer from "../components/landing/Footer";
 
@@ -15,7 +14,6 @@ const Page = () => {
       <Hero />
       <Work />
       <BentoGrid />
-      <Price />
       <FAQ />
       <Testimonial />
       <About />
