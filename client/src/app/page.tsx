@@ -7,6 +7,7 @@ import Testimonial from "../components/landing/Testimonial";
 import FAQ from "../components/landing/FAQ";
 import Footer from "../components/landing/Footer";
 
+
 const Page = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Page = () => {
       <Testimonial />
       <About />
       <Footer />
+
     </>
   );
 };
